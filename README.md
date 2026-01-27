@@ -81,6 +81,8 @@ Then open your browser to `http://localhost:8501`
 ```bash
 python main.py
 ```
+#### Web App link
+`https://strategytournament.streamlit.app/`
 
 ## Project Structure
 
