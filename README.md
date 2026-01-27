@@ -94,7 +94,7 @@ strategy_tournament/
 ├── evolution.py        # Evolutionary dynamics and ESS analysis
 ├── analysis.py         # Statistical analysis and visualization
 ├── requirements.txt    # Python dependencies
-└── README.md          # This file
+└── README.md         
 ```
 
 ## What You Can Experiment With
@@ -166,13 +166,11 @@ This simulator is perfect for:
 - With repeated interactions, **Tit for Tat** can become stable
 - Population composition affects which strategies survive
 
-
-
 ##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Inspired by Robert Axelrod's famous Prisoner's Dilemma tournaments
 - Based on concepts from evolutionary game theory
