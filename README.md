@@ -1,4 +1,4 @@
-# 🎯 Strategy Tournament Game: An Interactive Game Theory Simulator
+# Strategy Tournament Game: An Interactive Game Theory Simulator
 
 ![Game Theory](https://img.shields.io/badge/Game-Theory-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-green)
@@ -7,18 +7,18 @@
 
 An interactive simulator that demonstrates classic game theory concepts through tournaments between different decision-making strategies in repeated games like the Prisoner's Dilemma.
 
-## 📖 Overview
+## Overview
 
 This project allows you to experiment with game theory concepts by pitting different strategies against each other in classic game scenarios. Watch as strategies compete, evolve, and demonstrate fundamental game theory principles like Nash Equilibrium, dominant strategies, and evolutionarily stable strategies.
 
-## ✨ Features
+## Features
 
-### 🎮 **Interactive Game Simulations**
+### **Interactive Game Simulations**
 - **Multiple Game Types**: Prisoner's Dilemma, Snowdrift Game, Stag Hunt, Matching Pennies
 - **Customizable Parameters**: Adjust payoff matrices, noise levels, and match lengths
 - **Real-time Visualization**: Watch matches unfold with interactive charts
 
-### 🤖 **Strategy Library**
+###  **Strategy Library**
 - **Always Cooperate**: Unconditionally cooperative
 - **Always Defect**: Unconditionally competitive  
 - **Tit for Tat**: Starts with cooperation, then mirrors opponent's last move
@@ -28,20 +28,20 @@ This project allows you to experiment with game theory concepts by pitting diffe
 - **Random**: Randomly chooses between cooperate/defect
 - **Adaptive TFT**: Adjusts based on opponent's behavior patterns
 
-### 📊 **Analysis Tools**
+###  **Analysis Tools**
 - **Tournament Rankings**: Round-robin competitions with detailed statistics
 - **Cooperation Heatmaps**: Visualize cooperation patterns between strategies
 - **Evolutionary Dynamics**: Simulate population evolution over generations
 - **ESS Analysis**: Identify Evolutionarily Stable Strategies
 - **Nash Equilibrium Calculator**: Automatic game analysis
 
-### 🖥️ **User Interface**
+### **User Interface**
 - **Streamlit Web App**: No installation required to run the web interface
 - **Interactive Controls**: Sliders, dropdowns, and checkboxes for all parameters
 - **Responsive Design**: Works on desktop and mobile browsers
 - **Educational Content**: Built-in explanations of game theory concepts
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -82,7 +82,7 @@ Then open your browser to `http://localhost:8501`
 python main.py
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 strategy_tournament/
@@ -97,7 +97,7 @@ strategy_tournament/
 └── README.md          # This file
 ```
 
-## 🧪 What You Can Experiment With
+## What You Can Experiment With
 
 ### 1. **Basic Tournament**
 Run a round-robin tournament to see which strategies perform best:
@@ -127,7 +127,7 @@ Interactive demonstrations of:
 - **ESS**: Strategies that can't be invaded by alternatives
 - **Iterated Games**: How repetition changes outcomes
 
-## 📚 Educational Value
+## Educational Value
 
 This simulator is perfect for:
 - **Students**: Visualize abstract game theory concepts
@@ -145,7 +145,7 @@ This simulator is perfect for:
 - Evolutionarily Stable Strategies (ESS)
 - Repeated game strategies
 
-## 🔧 Technical Details
+## Technical Details
 
 ### Dependencies
 - **NumPy**: Numerical computations and matrix operations
@@ -153,7 +153,7 @@ This simulator is perfect for:
 - **Pandas**: Data manipulation and analysis
 - **Streamlit**: Interactive web application framework
 
-## 📊 Example Results
+## Example Results
 
 ### Typical Prisoner's Dilemma Findings
 - **Tit for Tat** often wins tournaments by balancing cooperation and retaliation
@@ -168,7 +168,7 @@ This simulator is perfect for:
 
 
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -177,11 +177,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Inspired by Robert Axelrod's famous Prisoner's Dilemma tournaments
 - Based on concepts from evolutionary game theory
 - Built with amazing open-source tools (Python, Streamlit, Matplotlib)
-
-
-
-<div align="center">
-Made with ❤️ by Game Theory Enthusiasts
-<br>
-⭐ Star this repo if you found it useful!
-</div>
