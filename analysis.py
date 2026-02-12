@@ -255,3 +255,77 @@ def analyze_nash_equilibrium(payoff_matrix) -> pd.DataFrame:
     data.append(['Column Player Dominant', col_dom])
     
     return pd.DataFrame(data, columns=['Property', 'Value'])
+
+def compute_strategy_metrics(results, tournament):
+    metrics = {}
+
+    scores = results["scores"]                 # avg score per strategy
+    cooperation_rates = tournament.get_cooperation_rates()
+    detailed_history = results["detailed_history"]
+
+    for name in scores.keys():
+        history = detailed_history.get(name, [])
+
+        moves = len(history)
+        retaliation = 0
+        forgiveness = 0
+
+        # Simple heuristics for radar dimensions
+        if moves > 1:
+            for i in range(1, len(history)):
+                prev_opp_move = history[i-1][1]
+                curr_move = history[i][0]
+
+                if prev_opp_move == "D" and curr_move == "D":
+                    retaliation += 1
+                if prev_opp_move == "D" and curr_move == "C":
+                    forgiveness += 1
+
+            retaliation_rate = retaliation / moves
+            forgiveness_rate = forgiveness / moves
+        else:
+            retaliation_rate = 0
+            forgiveness_rate = 0
+
+        metrics[name] = {
+            "avg_payoff": scores[name],                   # already averaged
+            "cooperation_rate": cooperation_rates.get(name, 0),
+            "retaliation": retaliation_rate,
+            "forgiveness": forgiveness_rate,
+            "stability": 0.5,                              # placeholder (from evolution.py later)
+            "win_rate": 0.0                                # optional, you can compute later
+        }
+
+    return metrics
+
+def plot_strategy_radar(metrics, strategy_name):
+    labels = list(metrics[strategy_name].keys())
+    values = list(metrics[strategy_name].values())
+
+    values += values[:1]
+    angles = np.linspace(0, 2 * np.pi, len(labels) + 1)
+
+    fig, ax = plt.subplots(figsize=(5, 5), subplot_kw=dict(polar=True))
+    ax.set_ylim(0, 1)  # origin-based scaling
+    ax.plot(angles, values, linewidth=2)
+    ax.fill(angles, values, alpha=0.25)
+    ax.set_thetagrids(np.degrees(angles[:-1]), labels)
+    ax.set_title(f"Strategy Radar: {strategy_name}")
+    return fig
+
+def normalize_metrics(metrics):
+    normalized = {}
+    
+    keys = list(next(iter(metrics.values())).keys())
+
+    mins = {k: min(m[k] for m in metrics.values()) for k in keys}
+    maxs = {k: max(m[k] for m in metrics.values()) for k in keys}
+
+    for name, m in metrics.items():
+        normalized[name] = {}
+        for k in keys:
+            if maxs[k] - mins[k] == 0:
+                normalized[name][k] = 0.5
+            else:
+                normalized[name][k] = (m[k] - mins[k]) / (maxs[k] - mins[k])
+    return normalized
