@@ -183,6 +183,7 @@ def main():
                 
                 # Store results for radar analysis
                 st.session_state.tournament_results = results
+                st.session_state.tournament = tournament
                 
                 # Match history example
                 st.subheader("Example Match Analysis")
@@ -816,9 +817,7 @@ def main():
                     if data_source == "Use Tournament Results" and st.session_state.tournament_results:
                         # Use existing tournament results
                         radar_results = st.session_state.tournament_results
-                        radar_tournament = Tournament(selected_strategies, payoff,
-                                                    rounds_per_match=rounds_per_match,
-                                                    noise=noise)
+                        radar_tournament = st.session_state.get('tournament', None)
                     elif data_source == "Use Bracket Results" and st.session_state.bracket_results:
                         # Use bracket results (convert to metrics)
                         radar_results = st.session_state.bracket_results
@@ -845,14 +844,15 @@ def main():
             
             # Display available strategies
             if st.session_state.radar_metrics:
-                st.subheader("Available Strategies")
+                st.subheader("Strategy Selection")
                 st.info(f"✓ {len(st.session_state.radar_metrics)} strategies ready for analysis")
                 
                 strategy_names = list(st.session_state.radar_metrics.keys())
                 strategy_names.sort()
                 
+                # Single strategy selection
                 selected_strategy = st.selectbox(
-                    "Select strategy to display",
+                    "Single strategy view",
                     strategy_names,
                     key="radar_strategy_select"
                 )
@@ -862,44 +862,51 @@ def main():
                 if strategy_obj:
                     st.caption(f"*{strategy_obj.description}*")
                 
+                st.markdown("---")
+                
                 # Compare multiple strategies option
-                compare_mode = st.checkbox("Compare multiple strategies", 
+                compare_mode = st.checkbox("📊 Compare multiple strategies", 
                                          key="compare_radar",
+                                         value=False,
                                          help="Select multiple strategies to compare on the same radar chart")
                 
+                selected_strategies_compare = []
                 if compare_mode:
+                    st.subheader("Compare Strategies")
                     selected_strategies_compare = st.multiselect(
-                        "Select strategies to compare (max 4 for clarity)",
+                        "Select 2-4 strategies to compare",
                         strategy_names,
-                        default=[strategy_names[0]] if strategy_names else [],
+                        default=[strategy_names[0], strategy_names[1]] if len(strategy_names) > 1 else strategy_names,
                         max_selections=4,
                         key="radar_compare_select"
                     )
+                    
+                    if len(selected_strategies_compare) < 2:
+                        st.warning("⚠️ Please select at least 2 strategies to compare")
         
         with col2:
             if st.session_state.radar_metrics:
                 st.subheader("Strategy Performance Radar Chart")
                 
                 with st.container():
-                    if 'compare_mode' in locals() and compare_mode and selected_strategies_compare:
-                        # Display multiple strategies on same radar
-                        for i, strategy in enumerate(selected_strategies_compare):
-                            fig = plot_strategy_radar(st.session_state.radar_metrics, strategy, 
-                                                    color_idx=i, 
-                                                    show_legend=True,
-                                                    alpha=0.7)
-                            if i == 0:
-                                base_fig = fig
-                            else:
-                                # Merge plots (implemented in plot_strategy_radar with show_legend)
-                                pass
-                        
-                        if selected_strategies_compare:
-                            fig = plot_strategy_radar(st.session_state.radar_metrics, 
-                                                    selected_strategies_compare[0],
-                                                    compare_strategies=selected_strategies_compare[1:])
+                    # Create radar chart based on mode
+                    if compare_mode and len(selected_strategies_compare) >= 2:
+                        # Generate comparison radar chart
+                        fig = plot_strategy_radar_comparison(
+                            st.session_state.radar_metrics, 
+                            selected_strategies_compare
+                        )
+                        if fig:
                             st.pyplot(fig)
                             plt.close(fig)
+                            
+                            # Add comparison legend
+                            st.markdown("""
+                            <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 0.5rem; margin-top: 0.5rem;">
+                                <strong>📊 Comparison Legend:</strong><br>
+                                Each line represents a different strategy. Use the selection panel to add/remove strategies.
+                            </div>
+                            """, unsafe_allow_html=True)
                     else:
                         # Single strategy radar
                         selected = st.session_state.get('radar_strategy_select', 
@@ -910,16 +917,19 @@ def main():
                             plt.close(fig)
                     
                     # Download radar chart
-                    if st.button("💾 Save Radar Chart", key="save_radar"):
-                        import io
-                        buf = io.BytesIO()
-                        fig.savefig(buf, format="png", dpi=150, bbox_inches='tight')
-                        st.download_button(
-                            label="Download Radar",
-                            data=buf.getvalue(),
-                            file_name=f"strategy_radar_{selected if 'selected' in locals() else 'compare'}.png",
-                            mime="image/png"
-                        )
+                    if fig:
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            if st.button("💾 Save Radar Chart", key="save_radar"):
+                                import io
+                                buf = io.BytesIO()
+                                fig.savefig(buf, format="png", dpi=150, bbox_inches='tight')
+                                st.download_button(
+                                    label="📥 Download PNG",
+                                    data=buf.getvalue(),
+                                    file_name=f"strategy_radar_{'comparison' if compare_mode else selected}.png",
+                                    mime="image/png"
+                                )
                 
                 # Detailed metrics table
                 st.subheader("Detailed Strategy Metrics")
@@ -933,13 +943,16 @@ def main():
                     else:
                         formatted_metrics[col] = formatted_metrics[col].map('{:.3f}'.format)
                 
-                # Highlight selected strategy
+                # Highlight selected strategies
                 def highlight_selected(x):
-                    if 'selected_strategy' in locals() and x.name == selected:
-                        return ['background-color: #e3f2fd'] * len(x)
-                    elif 'selected_strategies_compare' in locals() and x.name in selected_strategies_compare:
-                        return ['background-color: #fff3e0'] * len(x)
-                    return [''] * len(x)
+                    styles = [''] * len(x)
+                    if compare_mode and len(selected_strategies_compare) > 0:
+                        if x.name in selected_strategies_compare:
+                            styles = ['background-color: #e3f2fd'] * len(x)
+                    elif 'selected_strategy' in locals():
+                        if x.name == selected_strategy:
+                            styles = ['background-color: #e3f2fd'] * len(x)
+                    return styles
                 
                 st.dataframe(
                     formatted_metrics.style.apply(highlight_selected, axis=1),
@@ -981,6 +994,7 @@ def main():
                         <li><strong>Multi-dimensional:</strong> Evaluates strategies across 5 key metrics</li>
                         <li><strong>Normalized Comparison:</strong> All metrics scaled to 0-1 for fair comparison</li>
                         <li><strong>Strategy Profiles:</strong> Quickly identify if a strategy is cooperative, retaliatory, or robust</li>
+                        <li><strong>Compare Mode:</strong> Plot up to 4 strategies on the same radar chart</li>
                     </ul>
                 </div>
                 """, unsafe_allow_html=True)
@@ -994,6 +1008,61 @@ def main():
         '</p>',
         unsafe_allow_html=True
     )
+
+def plot_strategy_radar_comparison(metrics, strategies_to_compare):
+    """Plot multiple strategies on the same radar chart for comparison"""
+    if not metrics or len(strategies_to_compare) < 2:
+        return None
+    
+    # Define categories
+    categories = ['Score', 'Cooperation\nRate', 'Robustness', 'Forgivingness', 'Retaliation']
+    num_vars = len(categories)
+    
+    # Compute angles for radar chart
+    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
+    angles += angles[:1]  # Close the loop
+    
+    # Create figure
+    fig, ax = plt.subplots(figsize=(10, 8), subplot_kw=dict(projection='polar'))
+    
+    # Colors for different strategies
+    colors = ['#1E88E5', '#FFC107', '#DC143C', '#2E7D32', '#9C27B0', '#FF8C00', '#00ACC1']
+    
+    # Plot each strategy
+    for i, strategy_name in enumerate(strategies_to_compare):
+        if strategy_name in metrics:
+            strategy_metrics = metrics[strategy_name]
+            
+            # Extract values in correct order
+            values = [
+                strategy_metrics.get('score', 0.5),
+                strategy_metrics.get('cooperation_rate', 0.5),
+                strategy_metrics.get('robustness', 0.5),
+                strategy_metrics.get('forgivingness', 0.5),
+                strategy_metrics.get('retaliation', 0.5)
+            ]
+            values += values[:1]  # Close the loop
+            
+            # Plot with different color and style
+            color = colors[i % len(colors)]
+            ax.plot(angles, values, 'o-', linewidth=2, label=strategy_name, color=color)
+            ax.fill(angles, values, alpha=0.15, color=color)
+    
+    # Set category labels
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(categories, size=10)
+    
+    # Set y-axis limits
+    ax.set_ylim(0, 1)
+    ax.set_yticks([0.2, 0.4, 0.6, 0.8, 1.0])
+    ax.set_yticklabels(['0.2', '0.4', '0.6', '0.8', '1.0'], size=8)
+    ax.grid(True)
+    
+    # Add title and legend
+    ax.set_title('Strategy Performance Comparison', size=14, pad=20)
+    ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.0))
+    
+    return fig
 
 def compute_metrics_from_bracket(bracket_results, payoff, rounds_per_match, noise):
     """Helper function to compute strategy metrics from bracket results"""
