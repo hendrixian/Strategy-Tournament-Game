@@ -14,6 +14,12 @@ from analysis import TournamentAnalyzer, analyze_nash_equilibrium, compute_strat
 
 from bracket import BracketTournament
 from bracket_visualization import BracketVisualizer
+#added by thu for decision tree
+from decision_tree_analysis import (
+    prepare_decision_tree_data,
+    train_decision_tree,
+    plot_decision_tree
+)
 
 
 # Page configuration
@@ -133,8 +139,8 @@ def main():
         mutation_rate = st.slider("Mutation Rate", 0.0, 0.1, 0.01, step=0.005)
     
     # Main content area - Added Strategy Radar tab
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
-        ["📊 Tournament", "📈 Evolution", "🎮 Single Match", "📚 Theory", "🏆 Bracket", "🎯 Strategy Radar"]
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+        ["📊 Tournament", "📈 Evolution", "🎮 Single Match", "📚 Theory", "🏆 Bracket", "🎯 Strategy Radar", "🌳 Decision Tree"]
     )
     
     # Initialize payoff matrix
@@ -998,7 +1004,41 @@ def main():
                     </ul>
                 </div>
                 """, unsafe_allow_html=True)
-    
+    #added by thu for decision tree tab
+    with tab7:
+        st.markdown('<h2 class="sub-header">Decision Tree Strategy Classification</h2>', 
+                unsafe_allow_html=True)
+
+        if st.session_state.radar_metrics:
+
+           if st.button("🌳 Train Decision Tree", type="primary"):
+            # Right before preparing data for decision tree
+            #st.write("Debug: session data for decision tree")
+            #st.write(st.session_state.radar_metrics)   # Or wherever your DF comes from
+            #df = prepare_decision_tree_data(st.session_state.radar_metrics)
+            #st.write("Columns in DF:", df.columns)
+
+
+            df = prepare_decision_tree_data(
+                st.session_state.radar_metrics
+            )
+
+            clf, features = train_decision_tree(df)
+
+            st.subheader("Training Data")
+            st.dataframe(df)
+
+            st.subheader("Decision Tree Structure")
+
+            fig = plot_decision_tree(clf, features)
+            st.pyplot(fig)
+            plt.close(fig)
+
+            st.success("✅ Decision Tree trained successfully!")
+
+        else:
+          st.info("Please generate Strategy Radar first to create metrics data.")
+
     # Footer
     st.markdown("---")
     st.markdown(
@@ -1008,6 +1048,7 @@ def main():
         '</p>',
         unsafe_allow_html=True
     )
+    
 
 def plot_strategy_radar_comparison(metrics, strategies_to_compare):
     """Plot multiple strategies on the same radar chart for comparison"""
