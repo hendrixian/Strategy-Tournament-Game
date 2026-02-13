@@ -56,13 +56,14 @@ def plot_decision_tree(clf, feature_names):
     """
     Plot tree structure
     """
-    fig, ax = plt.subplots(figsize=(14, 8))
+    fig, ax = plt.subplots(figsize=(22, 12), dpi=120)
     tree.plot_tree(
         clf,
         feature_names=feature_names,
         class_names=["Low", "High"],
         filled=True,
         rounded=True,
+        fontsize=18,
         ax=ax
     )
     return fig
