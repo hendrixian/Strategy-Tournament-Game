@@ -1024,6 +1024,7 @@ def main():
             )
 
             clf, features = train_decision_tree(df)
+            
 
             st.subheader("Training Data")
             st.dataframe(df)
