@@ -25,12 +25,14 @@ def prepare_decision_tree_data(radar_metrics):
 
 
 
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+
 def train_decision_tree(df):
     """
     Train Decision Tree Classifier
     """
 
-    # Use actual columns that exist
     features = [
         'cooperation_rate',
         'retaliation',
@@ -42,13 +44,21 @@ def train_decision_tree(df):
     X = df[features]
     y = df['label']
 
+    # 🔥 Train-test split (NEW)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+
     clf = DecisionTreeClassifier(
         max_depth=3,
         random_state=42
     )
-    clf.fit(X, y)
 
-    return clf, features
+    clf.fit(X_train, y_train)
+
+    # 🔥 Return everything needed
+    return clf, features, X_train, X_test, y_train, y_test
+
 
 
 

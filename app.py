@@ -1023,11 +1023,45 @@ def main():
                 st.session_state.radar_metrics
             )
 
-            clf, features = train_decision_tree(df)
+            #clf, features = train_decision_tree(df)
+            clf, features, X_train, X_test, y_train, y_test = train_decision_tree(df)
+            #Accuracy
+            #Decision rules
+            from sklearn.tree import export_text
+            st.subheader("Decision Rules")
+            rules=export_text(clf, feature_names=features)
+            st.text(rules)
+            #decision path
+            st.subheader("Decision Path Example")
+            sample=X_test.iloc[0]
+            prediction=clf.predict(sample.to_frame().T)[0]
+            st.write("Sample Metrics:")
+            st.write(sample)
+            st.write("Predicted Label:",prediction)
+            #strategy recommendation
+            st.subheader("Strategy Recommendation")
+            if prediction=="High":
+                st.info("Your strategy is highly aggresive. Consider improving stability or forgiveness to avoid risky losses.")
+            elif prediction=="Low":
+                st.info("Good balance or defensive strategy detected. Small adjustments may optimize results.")
             
+            else:
+                st.info("Analyze your radar metrics for possible improvments.")
+            #df = prepare_decision_tree_data(st.session_state.radar_metrics)
+            #st.write(df.head())
 
+            #feature importance
+            importance=pd.DataFrame({
+                "Feature":features,
+                "Importance":clf.feature_importances_
+            }).sort_values("Importance", ascending=False)
+            st.subheader("Feature Importance")
+            st.bar_chart(importance.set_index("Feature"))
             st.subheader("Training Data")
             st.dataframe(df)
+
+            
+            
 
             st.subheader("Decision Tree Structure")
 
@@ -1039,7 +1073,7 @@ def main():
 
         else:
           st.info("Please generate Strategy Radar first to create metrics data.")
-
+    #added by thu for decision tree ends here
     # Footer
     st.markdown("---")
     st.markdown(
