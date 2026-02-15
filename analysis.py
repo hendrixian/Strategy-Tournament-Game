@@ -63,8 +63,8 @@ class TournamentAnalyzer:
         
         return ax
     
-    def plot_cooperation_heatmap(self, match_results: List[Dict[str, Any]], ax=None):
-        """Plot cooperation heatmap between strategies"""
+    def plot_cooperation_network(self, match_results: List[Dict[str, Any]], ax=None):
+        """Plot a directed cooperation network between strategies."""
         if ax is None:
             fig, ax = plt.subplots(figsize=(8, 6))
         
@@ -77,50 +77,83 @@ class TournamentAnalyzer:
         strategies = sorted(strategies)
         n = len(strategies)
         
-        # Initialize cooperation matrix
-        coop_matrix = np.zeros((n, n))
-        count_matrix = np.zeros((n, n))
+        if n == 0:
+            ax.set_title('Cooperation Network')
+            ax.axis('off')
+            return ax
         
         # Map strategy names to indices
         strategy_index = {name: i for i, name in enumerate(strategies)}
         
-        # Fill cooperation matrix
+
+        # Build directed edge list from match histories
+        edges = []
         for match in match_results:
             s1 = match['strategy1']
             s2 = match['strategy2']
             history = match['history']
+            if not history:
+                continue
             
             i = strategy_index[s1]
             j = strategy_index[s2]
             
-            if history:
-                # Calculate cooperation rate of s1 against s2
-                coop_count = sum(1 for h in history if h[0] == 'C')
-                coop_rate = coop_count / len(history)
-                
-                coop_matrix[i, j] = coop_rate
-                count_matrix[i, j] = 1
+            coop_rate_1_to_2 = sum(1 for h in history if h[0] == 'C') / len(history)
+            coop_rate_2_to_1 = sum(1 for h in history if h[1] == 'C') / len(history)
+
+            edges.append((i, j, coop_rate_1_to_2))
+            edges.append((j, i, coop_rate_2_to_1))
+
+        # Place nodes on a circle
+        angles = np.linspace(0, 2 * np.pi, n, endpoint=False)
+        radius = 1.0
+        positions = {
+            idx: (radius * np.cos(angle), radius * np.sin(angle))
+            for idx, angle in enumerate(angles)
+        }
+
+        # Draw directed edges (color and thickness encode cooperation rate)
+        cmap = plt.cm.RdYlGn
+        for src, dst, weight in edges:
+            if src == dst:
+                continue
+            x1, y1 = positions[src]
+            x2, y2 = positions[dst]
+            ax.annotate(
+                '',
+                xy=(x2, y2),
+                xytext=(x1, y1),
+                arrowprops=dict(
+                    arrowstyle='->',
+                    color=cmap(weight),
+                    lw=1.0 + 3.0 * weight,
+                    alpha=0.75,
+                    shrinkA=18,
+                    shrinkB=18,
+                    connectionstyle='arc3,rad=0.12'
+                )
+            )
+
+        # Draw nodes
+        node_x = [positions[i][0] for i in range(n)]
+        node_y = [positions[i][1] for i in range(n)]
+        ax.scatter(node_x, node_y, s=1200, c='lightsteelblue', edgecolors='black', zorder=3)
+
         
-        # Plot heatmap
-        im = ax.imshow(coop_matrix, cmap='RdYlGn', vmin=0, vmax=1)
-        
-        # Add labels
-        ax.set_xticks(np.arange(n))
-        ax.set_yticks(np.arange(n))
-        ax.set_xticklabels(strategies, rotation=45, ha='right')
-        ax.set_yticklabels(strategies)
-        
-        # Add text annotations
-        for i in range(n):
-            for j in range(n):
-                if count_matrix[i, j] > 0:
-                    text = ax.text(j, i, f'{coop_matrix[i, j]:.2f}',
-                                 ha="center", va="center",
-                                 color="black", fontsize=8)
-        
-        ax.set_title('Cooperation Rates Between Strategies')
-        plt.colorbar(im, ax=ax, label='Cooperation Rate')
-        
+        for i, name in enumerate(strategies):
+            x, y = positions[i]
+            ax.text(x, y, name, ha='center', va='center', fontsize=8, zorder=4)
+
+        # Colorbar legend for edge colors
+        sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(vmin=0, vmax=1))
+        sm.set_array([])
+        plt.colorbar(sm, ax=ax, label='Cooperation Rate (edge direction)')
+
+        ax.set_title('Directed Cooperation Network')
+        ax.set_xlim(-1.4, 1.4)
+        ax.set_ylim(-1.4, 1.4)
+        ax.set_aspect('equal')
+        ax.axis('off')
         return ax
     
     def plot_evolutionary_dynamics(self, pop_history: np.ndarray, 

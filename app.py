@@ -185,7 +185,7 @@ def main():
                 with col2:
                     st.subheader("Cooperation Network")
                     fig, ax = plt.subplots(figsize=(8, 6))
-                    analyzer.plot_cooperation_heatmap(results['match_results'], ax)
+                    analyzer.plot_cooperation_network(results['match_results'], ax)
                     st.pyplot(fig)
                     plt.close(fig)
                 
