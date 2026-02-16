@@ -155,7 +155,7 @@ def main():
     with tab1:
         st.markdown('<h2 class="sub-header">Tournament Results</h2>', unsafe_allow_html=True)
         
-        if st.button("🏆 Run Tournament", type="primary", width='stretch'):
+        if st.button("🏆 Run Tournament", type="primary", use_container_width=True):
             with st.spinner("Running tournament..."):
                 # Create and run tournament
                 tournament = Tournament(selected_strategies, payoff, 
@@ -170,7 +170,7 @@ def main():
                 # Summary table
                 st.subheader("Tournament Rankings")
                 summary = analyzer.create_summary_table()
-                st.dataframe(summary, width='stretch', hide_index=True)
+                st.dataframe(summary, use_container_width=True, hide_index=True)
                 
                 # Create visualizations
                 col1, col2 = st.columns(2)
@@ -234,7 +234,7 @@ def main():
     with tab2:
         st.markdown('<h2 class="sub-header">Evolutionary Dynamics</h2>', unsafe_allow_html=True)
         
-        if st.button("🌱 Run Evolutionary Simulation", type="primary", width='stretch'):
+        if st.button("🌱 Run Evolutionary Simulation", type="primary", use_container_width=True):
             with st.spinner("Running evolutionary simulation..."):
                 # Initialize evolutionary dynamics
                 evo = EvolutionaryDynamics(selected_strategies, payoff)
@@ -258,7 +258,7 @@ def main():
                     })
                 
                 ess_df = pd.DataFrame(ess_data)
-                st.dataframe(ess_df, width='stretch', hide_index=True)
+                st.dataframe(ess_df, use_container_width=True, hide_index=True)
                 
                 # Plot evolutionary dynamics
                 col1, col2 = st.columns(2)
@@ -367,7 +367,7 @@ def main():
                 })
             
             moves_df = pd.DataFrame(moves_data)
-            st.dataframe(moves_df, width='stretch', hide_index=True)
+            st.dataframe(moves_df, use_container_width=True, hide_index=True)
             
             # Plot match history
             fig, ax = plt.subplots(figsize=(12, 4))
@@ -382,7 +382,7 @@ def main():
         # Game analysis
         st.subheader("Game Analysis")
         nash_table = analyze_nash_equilibrium(payoff)
-        st.dataframe(nash_table, width='stretch', hide_index=True)
+        st.dataframe(nash_table, use_container_width=True, hide_index=True)
         
         # Payoff matrix visualization
         st.subheader("Payoff Matrix")
@@ -506,7 +506,7 @@ def main():
                                                 help="Play a match for 3rd place in single elimination")
         
         # Run bracket tournament button
-        if st.button("🎯 Run Bracket Tournament", type="primary", width='stretch', key="run_bracket"):
+        if st.button("🎯 Run Bracket Tournament", type="primary", use_container_width=True, key="run_bracket"):
             with st.spinner("Running bracket tournament..."):
                 # Prepare strategies based on seeding
                 if seeding_method == "Ranked (based on round-robin performance)" and st.session_state.prelim_rankings:
@@ -631,7 +631,7 @@ def main():
                     else:
                         stats_df = stats_df.sort_values('Strategy')
                     
-                    st.dataframe(stats_df, width='stretch', hide_index=True)
+                    st.dataframe(stats_df, use_container_width=True, hide_index=True)
                     
                     # Performance visualizations
                     col1, col2 = st.columns(2)
@@ -758,7 +758,7 @@ def main():
                                         })
                                     
                                     rounds_df = pd.DataFrame(rounds_data)
-                                    st.dataframe(rounds_df, width='stretch', hide_index=True)
+                                    st.dataframe(rounds_df, use_container_width=True, hide_index=True)
                                     
                                     # Quick summary
                                     total_rounds = len(match['history'])
@@ -819,7 +819,7 @@ def main():
             )
             
             # Run radar analysis button
-            if st.button("🎯 Generate Strategy Radar", type="primary", width='stretch', key="run_radar"):
+            if st.button("🎯 Generate Strategy Radar", type="primary", use_container_width=True, key="run_radar"):
                 with st.spinner("Running comprehensive strategy analysis..."):
                     
                     if data_source == "Use Tournament Results" and st.session_state.tournament_results:
@@ -964,7 +964,7 @@ def main():
                 
                 st.dataframe(
                     formatted_metrics.style.apply(highlight_selected, axis=1),
-                    width='stretch'
+                    use_container_width=True
                 )
                 
                 # Metric explanations
