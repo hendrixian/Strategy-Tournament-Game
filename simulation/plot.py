@@ -10,10 +10,10 @@ os.makedirs(PLOT_DIR, exist_ok=True)
 
 
 def load_latest_json():
-    files = sorted(glob.glob(os.path.join(RESULT_DIR, "*.json")))
+    files = glob.glob(os.path.join(RESULT_DIR, "*.json"))
     if not files:
         raise FileNotFoundError("No JSON results found in results/")
-    return files[-1]
+    return max(files, key=os.path.getmtime)
 
 
 def load_dataframe(json_file):

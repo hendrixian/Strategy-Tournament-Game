@@ -1,0 +1,113 @@
+{
+  "total_runs": 2,
+  "summary_rows": [
+    {
+      "strategy": "Always Defect",
+      "win_count": 1,
+      "win_rate": 0.5,
+      "avg_rank": 1.5,
+      "avg_score": 27.142857142857142,
+      "std_score": 2.0
+    },
+    {
+      "strategy": "Grudger",
+      "win_count": 1,
+      "win_rate": 0.5,
+      "avg_rank": 1.5,
+      "avg_score": 27.0,
+      "std_score": 1.8571428571428577
+    },
+    {
+      "strategy": "Adaptive TFT",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 4,
+      "avg_score": 24.214285714285715,
+      "std_score": 0.6428571428571423
+    },
+    {
+      "strategy": "Tit for Tat",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 4.5,
+      "avg_score": 23.57142857142857,
+      "std_score": 0.5714285714285712
+    },
+    {
+      "strategy": "Random",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 5,
+      "avg_score": 22.42857142857143,
+      "std_score": 2.7142857142857135
+    },
+    {
+      "strategy": "Pavlov",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 5.5,
+      "avg_score": 22.857142857142854,
+      "std_score": 1.5714285714285712
+    },
+    {
+      "strategy": "Tit for Two Tats",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 7,
+      "avg_score": 19.642857142857142,
+      "std_score": 1.2142857142857153
+    },
+    {
+      "strategy": "Always Cooperate",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 7,
+      "avg_score": 19.57142857142857,
+      "std_score": 2.2857142857142865
+    }
+  ],
+  "winners_by_seed": [
+    [
+      0,
+      "Always Defect"
+    ],
+    [
+      1,
+      "Grudger"
+    ]
+  ],
+  "rank_samples": {
+    "Adaptive TFT": [
+      3,
+      5
+    ],
+    "Always Cooperate": [
+      8,
+      6
+    ],
+    "Always Defect": [
+      1,
+      2
+    ],
+    "Grudger": [
+      2,
+      1
+    ],
+    "Pavlov": [
+      4,
+      7
+    ],
+    "Random": [
+      7,
+      3
+    ],
+    "Tit for Tat": [
+      5,
+      4
+    ],
+    "Tit for Two Tats": [
+      6,
+      8
+    ]
+  }
+}
