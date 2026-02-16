@@ -30,7 +30,7 @@ This project allows you to experiment with game theory concepts by pitting diffe
 
 ###  **Analysis Tools**
 - **Tournament Rankings**: Round-robin competitions with detailed statistics
-- **Cooperation Heatmaps**: Visualize cooperation patterns between strategies
+- **Cooperation Netwrok**: Visualize cooperation patterns between strategies
 - **Evolutionary Dynamics**: Simulate population evolution over generations
 - **ESS Analysis**: Identify Evolutionarily Stable Strategies
 - **Nash Equilibrium Calculator**: Automatic game analysis

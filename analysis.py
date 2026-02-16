@@ -263,10 +263,15 @@ def analyze_nash_equilibrium(payoff_matrix) -> pd.DataFrame:
     data.append(['Game Type', analysis['game_type']])
     
     # Payoffs - format as strings
-    data.append(['T (Temptation)', f"{analysis['payoffs']['T']:.2f}"])
-    data.append(['R (Reward)', f"{analysis['payoffs']['R']:.2f}"])
-    data.append(['P (Punishment)', f"{analysis['payoffs']['P']:.2f}"])
-    data.append(['S (Sucker)', f"{analysis['payoffs']['S']:.2f}"])
+    payoffs = analysis['payoffs']
+    if 'T' in payoffs:
+        data.append(['T (Temptation)', f"{payoffs['T']:.2f}"])
+        data.append(['R (Reward)', f"{payoffs['R']:.2f}"])
+        data.append(['P (Punishment)', f"{payoffs['P']:.2f}"])
+        data.append(['S (Sucker)', f"{payoffs['S']:.2f}"])
+    else:
+        data.append(['Win Payoff', f"{payoffs['win']:.2f}"])
+        data.append(['Lose Payoff', f"{payoffs['lose']:.2f}"])
     
     # Nash equilibria
     nash_str = ', '.join([f"({e[0]},{e[1]})" for e in analysis['pure_nash_equilibria']])

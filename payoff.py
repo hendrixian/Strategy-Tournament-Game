@@ -148,8 +148,11 @@ class PayoffMatrix:
         
         # Check for mixed strategy equilibrium (for 2x2 games)
         mixed_eq = None
-        if self.game_type != self.MATCHING_PENNIES:
-            # For symmetric games, calculate mixed strategy if exists
+        if self.game_type == self.MATCHING_PENNIES:
+            # Standard mixed equilibrium for matching pennies
+            mixed_eq = {'p_cooperate': 0.5, 'payoff': 0.0}
+            payoffs = {'win': self.win, 'lose': self.lose}
+        else:
             try:
                 # Probability that column player makes row player indifferent
                 p = (self.S - self.P) / (self.T + self.S - self.R - self.P)
@@ -157,10 +160,11 @@ class PayoffMatrix:
                     mixed_eq = {'p_cooperate': p, 'payoff': p*self.S + (1-p)*self.P}
             except ZeroDivisionError:
                 mixed_eq = None
+                payoffs = {'T': self.T, 'R': self.R, 'P': self.P, 'S': self.S}
         
         return {
             'game_type': self.game_type,
-            'payoffs': {'T': self.T, 'R': self.R, 'P': self.P, 'S': self.S},
+            'payoffs': payoffs,            
             'pure_nash_equilibria': nash_equilibria,
             'mixed_equilibrium': mixed_eq,
             'dominant_strategy': self._find_dominant_strategy(row_payoffs, col_payoffs)
