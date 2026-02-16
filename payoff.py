@@ -146,19 +146,30 @@ class PayoffMatrix:
                 if row_best and col_best:
                     nash_equilibria.append((m1, m2))
         
-        # Check for mixed strategy equilibrium (for 2x2 games)
+        if self.game_type == self.MATCHING_PENNIES:
+                    payoffs = {
+                        'win': getattr(self, 'win', 1),
+                        'lose': getattr(self, 'lose', -1),
+                    }
+        else:
+            payoffs = {
+                'T': getattr(self, 'T', 0),
+                'R': getattr(self, 'R', 0),
+                'P': getattr(self, 'P', 0),
+                'S': getattr(self, 'S', 0),
+            }
+
         mixed_eq = None
         if self.game_type == self.MATCHING_PENNIES:
             # Standard mixed equilibrium for matching pennies
             mixed_eq = {'p_cooperate': 0.5, 'payoff': 0.0}
-            payoffs = {'win': self.win, 'lose': self.lose}
         else:
             try:
-                # Probability that column player makes row player indifferent
-                p = (self.S - self.P) / (self.T + self.S - self.R - self.P)
+                denominator = self.T + self.S - self.R - self.P
+                p = (self.S - self.P) / denominator
                 if 0 <= p <= 1:
                     mixed_eq = {'p_cooperate': p, 'payoff': p*self.S + (1-p)*self.P}
-            except ZeroDivisionError:
+            except (ZeroDivisionError, AttributeError):
                 mixed_eq = None
                 payoffs = {'T': self.T, 'R': self.R, 'P': self.P, 'S': self.S}
         
