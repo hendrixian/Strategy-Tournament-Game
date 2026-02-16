@@ -169,20 +169,10 @@ class Tournament:
             for j in opponents:
                 s2 = strategies[j]
                 
-                # Play one round (or a few rounds)
-                move1 = s1.decide([], s2.name)
-                move2 = s2.decide([], s1.name)
-                
-                # Apply noise
-                move1 = self.apply_noise(move1)
-                move2 = self.apply_noise(move2)
-                
-                # Get payoff
-                payoff1, payoff2 = self.payoff_matrix.get_payoff(move1, move2)
-                
+                score1, score2, _ = self.play_match(s1, s2)
                 # Update scores
-                scores[s1.name] += payoff1
-                scores[s2.name] += payoff2
+                scores[s1.name] += score1
+                scores[s2.name] += score2
                 match_counts[s1.name] += 1
                 match_counts[s2.name] += 1
         
