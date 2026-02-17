@@ -59,8 +59,8 @@ def run_tournament_demo():
     # Plot 1: Score distribution
     analyzer.plot_score_distribution(axes[0, 0])
     
-    # Plot 2: Cooperation heatmap
-    analyzer.plot_cooperation_heatmap(results['match_results'], axes[0, 1])
+    # Plot 2: Cooperation network
+    analyzer.plot_cooperation_network(results['match_results'], axes[0, 1])
     
     # Plot 3: Payoff matrix
     analyzer.plot_payoff_matrix(payoff, axes[1, 0])

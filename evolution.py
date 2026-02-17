@@ -217,11 +217,19 @@ class EvolutionaryDynamics:
                     s1 = strategy_map[name1]
                     s2 = strategy_map[name2]
                     
-                    move1 = s1.decide([], name2)
-                    move2 = s2.decide([], name1)
-                    
-                    payoff1, _ = self.payoff_matrix.get_payoff(move1, move2)
-                    
+                    s1.reset()
+                    s2.reset()
+                    history = []
+                    total_payoff1 = 0.0
+                    rounds_per_interaction = 5  
+                    for _ in range(rounds_per_interaction):
+                        move1 = s1.decide(history, name2)
+                        move2 = s2.decide([(h[1], h[0]) for h in history], name1)   
+                        payoff1, _ = self.payoff_matrix.get_payoff(move1, move2)
+                        total_payoff1 += payoff1
+                        history.append((move1, move2))
+
+
                     # Update fitness
                     if name1 not in fitness_scores:
                         fitness_scores[name1] = 0
