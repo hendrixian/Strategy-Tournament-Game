@@ -5,6 +5,8 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
 
 from strategies import get_all_strategies, get_strategy_by_name
 from payoff import PayoffMatrix
@@ -141,8 +143,8 @@ def main():
         mutation_rate = st.slider("Mutation Rate", 0.0, 0.1, 0.01, step=0.005)
     
     # Main content area - Added Strategy Radar tab
-    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
-        ["📊 Tournament", "📈 Evolution", "🎮 Single Match", "📚 Theory", "🏆 Bracket", "🎯 Strategy Radar", "🌳 Decision Tree"]
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
+        ["📊 Tournament", "📈 Evolution", "🎮 Single Match", "📚 Theory", "🏆 Bracket", "🎯 Strategy Radar", "🌳 Decision Tree", "🌐 Interactive Dynamics"]
     )
     
     # Initialize payoff matrix
@@ -244,6 +246,8 @@ def main():
                 pop_history, fitness_history = evo.replicator_dynamics(
                     initial_pop, generations=evo_generations, mutation_rate=mutation_rate
                 )
+
+                st.session_state.pop_history = pop_history
                 
                 # Display ESS analysis
                 st.subheader("Evolutionarily Stable Strategies (ESS)")
@@ -341,6 +345,10 @@ def main():
                                   rounds_per_match=match_rounds, noise=noise)
             score1, score2, history = tournament.play_match(strategy1, strategy2)
             
+            st.session_state.last_match_history = history
+            st.session_state.last_match_s1 = strategy1.name
+            st.session_state.last_match_s2 = strategy2.name
+
             # Display results
             col1, col2 = st.columns(2)
             
@@ -1075,6 +1083,106 @@ def main():
         else:
           st.info("Please generate Strategy Radar first to create metrics data.")
     #added by thu for decision tree ends here
+
+    with tab8:
+        st.markdown('<h2 class="sub-header">🌐 Global Strategy Dynamics (3D)</h2>', unsafe_allow_html=True)
+        
+        st.markdown("---")
+
+        if st.session_state.tournament_results:
+            results = st.session_state.tournament_results
+            
+            st.subheader("🧊 Strategy Interaction Surface")
+            
+            strategies = [s.name for s in selected_strategies]
+            matrix_size = len(strategies)
+            z_data = np.zeros((matrix_size, matrix_size))
+            
+            for match in results['match_results']:
+                idx1 = strategies.index(match['strategy1'])
+                idx2 = strategies.index(match['strategy2'])
+                z_data[idx1][idx2] = match['score1']
+                z_data[idx2][idx1] = match['score2']
+
+            fig_3d = go.Figure(data=[go.Surface(z=z_data, x=strategies, y=strategies, colorscale='Viridis', colorbar_title="Score")])
+            
+            fig_3d.update_layout(
+                scene = dict(
+                    xaxis = dict(tickvals=list(range(matrix_size)), ticktext=strategies, title='Strategy A', tickangle=45, tickfont=dict(size=10)),
+                    yaxis = dict(tickvals=list(range(matrix_size)), ticktext=strategies, title='Strategy B', tickangle=-45, tickfont=dict(size=10)),
+                    zaxis = dict(title='Avg Score'),
+                ),
+                height=750, 
+                paper_bgcolor='rgba(0,0,0,0)', 
+                plot_bgcolor='rgba(0,0,0,0)',
+                template="plotly_dark"
+            )
+            
+            st.plotly_chart(fig_3d, use_container_width=True)
+            
+        else:
+            st.warning("⚠️ Run the tournament in Tab 1 first!")
+        
+        #Evolutionary Landscape
+        st.markdown("---")
+
+        if 'pop_history' in st.session_state:
+            st.subheader("🌊 Evolutionary Landscape")
+            pop_history = st.session_state.pop_history
+            
+            fig_evo = go.Figure(data=[go.Surface(z=pop_history.T, colorscale='Viridis')])
+            fig_evo.update_layout(
+                scene = dict(
+                    xaxis_title='Generation',
+                    yaxis=dict(tickvals=list(range(len(selected_strategies))), 
+                            ticktext=[s.name for s in selected_strategies],
+                            title='Strategies', 
+                            tickangle=30,
+                            tickfont=dict(size=10)),
+                    zaxis_title='Frequency'
+                ),
+                margin=dict(l=50, r=50, b=50, t=50),
+                height=800, template="plotly_dark"
+            )
+            st.plotly_chart(fig_evo, use_container_width=True)
+        else:
+            st.warning("⚠️ Please run 'Evolutionary Simulation' in Tab 2 first!")
+
+        st.markdown("---")
+
+        if 'last_match_history' in st.session_state:
+            st.subheader("🏎️ Match Score Trajectory")
+            history = st.session_state.last_match_history
+            s1_name = st.session_state.last_match_s1
+            s2_name = st.session_state.last_match_s2
+            
+            p1_cum = np.cumsum([h[2] for h in history])
+            p2_cum = np.cumsum([h[3] for h in history])
+            rounds = np.arange(len(history))
+            
+            fig_path = go.Figure(data=[go.Scatter3d(
+                x=p1_cum, y=p2_cum, z=rounds,
+                mode='lines+markers',
+                marker=dict(size=4, color=rounds, colorscale='Viridis', opacity=0.8),
+                line=dict(color='#E91E63', width=6)
+            )])
+
+            fig_path.update_layout(
+                scene = dict(
+                    xaxis_title=f'{s1_name} Score',
+                    yaxis_title=f'{s2_name} Score',
+                    zaxis_title='Round'
+                ),
+                height=600, template="plotly_dark",
+                margin=dict(l=0, r=0, b=0, t=40)
+            )
+            st.plotly_chart(fig_path, use_container_width=True)
+
+        else:
+            st.info("⚠️ Please run 'Simulate Match' in Tab 3 first!")
+
+        
+
     # Footer
     st.markdown("---")
     st.markdown(
