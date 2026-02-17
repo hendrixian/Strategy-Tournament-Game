@@ -4,11 +4,11 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 import matplotlib.pyplot as plt
-import numpy as np
+#import numpy as np
 
 
 def prepare_decision_tree_data(radar_metrics):
-    import pandas as pd
+    #import pandas as pd
 
     # Convert nested dict → DataFrame
     df = pd.DataFrame.from_dict(radar_metrics, orient='index')
@@ -16,10 +16,22 @@ def prepare_decision_tree_data(radar_metrics):
     df.rename(columns={'index': 'strategy'}, inplace=True)
 
     # Create classification label based on avg_payoff
-    median_score = df['avg_payoff'].median()
-    df['label'] = df['avg_payoff'].apply(
-        lambda x: "High" if x >= median_score else "Low"
-    )
+    #median_score = df['avg_payoff'].median()
+    #df['label'] = df['avg_payoff'].apply(
+     #   lambda x: "High" if x >= median_score else "Low"
+    #)
+    if 'forgiveness' in df.columns and 'forgivingness' not in df.columns:
+        df['forgivingness'] = df['forgiveness']
+    if 'stability' in df.columns and 'robustness' not in df.columns:
+        df['robustness']=df['stability']
+    if 'avg_payoff' in df.columns and 'score' not in df.columns:
+        df['score']=df['avg_payoff']
+    if 'score' not in df.columns:
+        raise ValueError("Decision tree requires a 'score' metric from radar data.")
+    median_score = df['score'].median()
+    df['label'] = df['score'].apply(
+    lambda x: "High" if x >= median_score else "Low"
+)
 
     return df
 
@@ -36,10 +48,18 @@ def train_decision_tree(df):
     features = [
         'cooperation_rate',
         'retaliation',
-        'forgiveness',
-        'stability',
-        'win_rate'
+        #'forgiveness',
+        #'stability',
+        #'win_rate'
+        'forgivingness',
+        'robustness',
+        'score'
     ]
+    missing_features = [feature for feature in features if feature not in df.columns]
+    if missing_features:
+        raise ValueError(
+            f"Missing required feature columns for decision tree: {missing_features}"
+        )
 
     X = df[features]
     y = df['label']
