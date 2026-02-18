@@ -6,6 +6,15 @@ from sklearn import tree
 import matplotlib.pyplot as plt
 #import numpy as np
 
+def assign_behavior_label(row):
+    if row['cooperation_rate'] < 0.5 and row['retaliation'] > 0.5:
+        return "Aggressive"
+    elif row['cooperation_rate'] > 0.55 and row['forgivingness'] <0.3:
+        return "Cooperative"
+    elif row['robustness'] > 0.7:
+        return "Defensive"
+    else:
+        return "Balanced"
 
 def prepare_decision_tree_data(radar_metrics):
     #import pandas as pd
@@ -28,10 +37,12 @@ def prepare_decision_tree_data(radar_metrics):
         df['score']=df['avg_payoff']
     if 'score' not in df.columns:
         raise ValueError("Decision tree requires a 'score' metric from radar data.")
-    median_score = df['score'].median()
-    df['label'] = df['score'].apply(
-    lambda x: "High" if x >= median_score else "Low"
-)
+   # median_score = df['score'].median()
+    #df['label'] = df['score'].apply(
+    #lambda x: "High" if x >= median_score else "Low"
+#)
+    df['label'] = df.apply(assign_behavior_label, axis=1)
+    
 
     return df
 
@@ -90,7 +101,7 @@ def plot_decision_tree(clf, feature_names):
     tree.plot_tree(
         clf,
         feature_names=feature_names,
-        class_names=["Low", "High"],
+        class_names=["Aggressive", "Cooperative", "Defensive", "Balanced"],
         filled=True,
         rounded=True,
         fontsize=18,

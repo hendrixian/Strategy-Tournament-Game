@@ -1041,23 +1041,39 @@ def main():
             rules=export_text(clf, feature_names=features)
             st.text(rules)
             #decision path
-            st.subheader("Decision Path Example")
-            sample=X_test.iloc[0]
-            prediction=clf.predict(sample.to_frame().T)[0]
+           # st.subheader("Decision Path Example")
+            #sample=X_test.iloc[0]
+           # st.write(df[['strategy', 'label']])
+            latest_sample = df[features].iloc[-1:]   # last row = user input
+            prediction = clf.predict(latest_sample)[0]
+
+
+           # prediction=clf.predict(sample.to_frame().T)[0]
             st.write("Sample Metrics:")
-            st.write(sample)
-            st.write("Predicted Label:",prediction)
+            st.write(latest_sample)
+          #  st.write("Predicted Label:",prediction)
             #strategy recommendation
             st.subheader("Strategy Recommendation")
-            if prediction=="High":
-                st.info("Your strategy is highly aggresive. Consider improving stability or forgiveness to avoid risky losses.")
-            elif prediction=="Low":
-                st.info("Good balance or defensive strategy detected. Small adjustments may optimize results.")
+            #if prediction=="High":
+                #st.info("Your strategy is performing well. Consider small adjustments to further optimize stability or cooperation.")
+            #elif prediction=="Low":
+             #   st.info("Your strategy has lower performance. Analyze key metrics like cooperation, robustness, and forgiveness to improve.")
             
-            else:
-                st.info("Analyze your radar metrics for possible improvments.")
+            #else:
+               # st.info("Analyze your radar metrics for possible improvments.")
             #df = prepare_decision_tree_data(st.session_state.radar_metrics)
             #st.write(df.head())
+            if prediction == "Aggressive":
+               st.info("Your strategy is aggressive. Consider improving forgiveness or cooperation.")
+            elif prediction == "Cooperative":
+               st.info("Your strategy is highly cooperative. Watch for exploitation from aggressive opponents.")
+            elif prediction == "Defensive":
+               st.info("Your strategy is defensive. You are stable but may miss scoring opportunities.")
+            elif prediction == "Balanced":
+               st.info("Your strategy is balanced. Keep refining for optimal performance.")
+            else:
+              st.info("Analyze your radar metrics for possible improvements.")
+
 
             #feature importance
             importance=pd.DataFrame({
