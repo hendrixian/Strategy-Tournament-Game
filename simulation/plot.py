@@ -2,6 +2,7 @@ import argparse
 import glob
 import json
 import os
+import re
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -17,7 +18,6 @@ def load_json_data(json_file):
 
 
 def detect_result_type(data):
-    """Infer whether this JSON is tournament-style or bracket-style."""
     summary_rows = data.get("summary_rows", [])
     if not summary_rows:
         return "unknown"
@@ -38,12 +38,10 @@ def load_latest_json(pattern):
 
 
 def resolve_inputs(args):
-    """Resolve which files to process based on CLI options."""
     targets = []
 
     if args.json_file:
-        targets.append(args.json_file)
-        return targets
+        return [args.json_file]
 
     if args.tournament_json:
         targets.append(args.tournament_json)
@@ -53,7 +51,6 @@ def resolve_inputs(args):
     if targets:
         return targets
 
-    # Default behavior: generate BOTH using latest files when available.
     latest_tournament = load_latest_json("tournament_*.json")
     latest_bracket = load_latest_json("bracket_*.json")
 
@@ -62,7 +59,6 @@ def resolve_inputs(args):
     if latest_bracket:
         targets.append(latest_bracket)
 
-    # Fallback for legacy/other naming.
     if not targets:
         latest_any = load_latest_json("*.json")
         if latest_any:
@@ -71,145 +67,145 @@ def resolve_inputs(args):
     return targets
 
 
-def plot_tournament_win_rate(df, name):
-    plt.figure(figsize=(10, 6))
-    plt.bar(df["strategy"], df["win_rate"])
-    plt.xticks(rotation=45, ha="right")
-    plt.ylabel("Win Rate")
-    plt.title("Strategy Win Rate Across Seeds")
-    plt.tight_layout()
-    plt.savefig(os.path.join(PLOT_DIR, f"{name}_winrate.png"))
-    plt.close()
+def parse_config_from_name(base_name, result_type):
+    if result_type == "tournament":
+        m = re.match(
+            r"^tournament_(?P<seeds>\d+)s_(?P<rounds>\d+)r_noise(?P<noise>[^_]+)(?:_gen(?P<gen>[^_]+)_mut(?P<mut>[^_]+))?_",
+            base_name,
+        )
+        if m:
+            parts = [
+                "Type: Round-robin",
+                f"Seeds: {m.group('seeds')}",
+                f"Rounds/Match: {m.group('rounds')}",
+                f"Noise: {m.group('noise')}",
+            ]
+            if m.group("gen") is not None and m.group("mut") is not None:
+                parts.append(f"Generations: {m.group('gen')}")
+                parts.append(f"Mutation: {m.group('mut')}")
+            return " | ".join(parts)
+
+    if result_type == "bracket":
+        m = re.match(
+            r"^bracket_(?P<btype>single|double)_(?P<seeds>\d+)s_(?P<rounds>\d+)r_noise(?P<noise>[^_]+)_",
+            base_name,
+        )
+        if m:
+            return " | ".join(
+                [
+                    f"Type: {m.group('btype').title()} Elimination",
+                    f"Seeds: {m.group('seeds')}",
+                    f"Rounds/Match: {m.group('rounds')}",
+                    f"Noise: {m.group('noise')}",
+                ]
+            )
+
+    return "Configuration: Unknown"
 
 
-def plot_tournament_score_std(df, name):
-    plt.figure(figsize=(10, 6))
-    plt.bar(df["strategy"], df["avg_score"], yerr=df["std_score"], capsize=5)
-    plt.xticks(rotation=45, ha="right")
-    plt.ylabel("Average Score")
-    plt.title("Average Score with Standard Deviation")
-    plt.tight_layout()
-    plt.savefig(os.path.join(PLOT_DIR, f"{name}_score_std.png"))
-    plt.close()
+def save_tournament_combo(df, data, base_name, game_name):
+    fig, axes = plt.subplots(1, 3, figsize=(24, 7))
 
+    # 1) Win rate
+    axes[0].bar(df["strategy"], df["win_rate"])
+    axes[0].set_title("Strategy Win Rate Across Seeds")
+    axes[0].set_ylabel("Win Rate")
+    axes[0].tick_params(axis="x", rotation=45)
 
-def plot_rank_boxplot(data, name):
-    rank_samples = data["rank_samples"]
+    # 2) Avg score +/- std
+    axes[1].bar(df["strategy"], df["avg_score"], yerr=df["std_score"], capsize=4)
+    axes[1].set_title("Average Score with Standard Deviation")
+    axes[1].set_ylabel("Average Score")
+    axes[1].tick_params(axis="x", rotation=45)
+
+    # 3) Rank boxplot
+    rank_samples = data.get("rank_samples", {})
     strategies = list(rank_samples.keys())
     values = [rank_samples[s] for s in strategies]
+    if strategies:
+        axes[2].boxplot(values, labels=strategies)
+    axes[2].set_title("Rank Distribution Across Seeds")
+    axes[2].set_ylabel("Rank (lower is better)")
+    axes[2].tick_params(axis="x", rotation=45)
 
-    plt.figure(figsize=(10, 6))
-    plt.boxplot(values, labels=strategies)
-    plt.xticks(rotation=45, ha="right")
-    plt.ylabel("Rank (lower is better)")
-    plt.title("Rank Distribution Across Seeds")
-    plt.tight_layout()
-    plt.savefig(os.path.join(PLOT_DIR, f"{name}_rank_boxplot.png"))
-    plt.close()
-
-
-def plot_evolution_top_rate(data, name):
-    evo_rows = pd.DataFrame(data.get("evolution_summary_rows", []))
-    if evo_rows.empty:
-        return
-
-    evo_rows = evo_rows.sort_values("top_final_pop_rate", ascending=False)
-    plt.figure(figsize=(10, 6))
-    plt.bar(evo_rows["strategy"], evo_rows["top_final_pop_rate"])
-    plt.xticks(rotation=45, ha="right")
-    plt.ylabel("Top-Final-Population Rate")
-    plt.title("Evolution Winner Rate Across Seeds")
-    plt.tight_layout()
-    plt.savefig(os.path.join(PLOT_DIR, f"{name}_evolution_top_rate.png"))
-    plt.close()
+    config_text = parse_config_from_name(base_name, "tournament")
+    fig.suptitle(f"{game_name} | Tournament Summary\n{config_text}", fontsize=13)
+    fig.tight_layout(rect=[0, 0.03, 1, 0.90])
+    out = os.path.join(PLOT_DIR, f"{base_name}_combined.png")
+    fig.savefig(out)
+    plt.close(fig)
+    return out
 
 
-def plot_bracket_champion_rate(df, name):
-    ordered = df.sort_values("champion_rate", ascending=False)
+def save_bracket_combo(df, base_name, game_name):
+    ordered_champ = df.sort_values("champion_rate", ascending=False)
+    ordered_match = df.sort_values("match_win_rate", ascending=False)
 
-    plt.figure(figsize=(10, 6))
-    plt.bar(ordered["strategy"], ordered["champion_rate"])
-    plt.xticks(rotation=45, ha="right")
-    plt.ylabel("Champion Rate")
-    plt.title("Bracket Champion Rate Across Seeds")
-    plt.tight_layout()
-    plt.savefig(os.path.join(PLOT_DIR, f"{name}_champion_rate.png"))
-    plt.close()
+    fig, axes = plt.subplots(1, 3, figsize=(24, 7))
 
+    # 1) Champion rate
+    axes[0].bar(ordered_champ["strategy"], ordered_champ["champion_rate"])
+    axes[0].set_title("Bracket Champion Rate Across Seeds")
+    axes[0].set_ylabel("Champion Rate")
+    axes[0].tick_params(axis="x", rotation=45)
 
-def plot_bracket_podium_stacked(df, name):
-    ordered = df.sort_values("champion_rate", ascending=False)
-    x = ordered["strategy"]
-
-    plt.figure(figsize=(11, 6))
-    plt.bar(x, ordered["champion_rate"], label="Champion")
-    plt.bar(
+    # 2) Podium stacked
+    x = ordered_champ["strategy"]
+    axes[1].bar(x, ordered_champ["champion_rate"], label="Champion")
+    axes[1].bar(
         x,
-        ordered["runner_up_rate"],
-        bottom=ordered["champion_rate"],
+        ordered_champ["runner_up_rate"],
+        bottom=ordered_champ["champion_rate"],
         label="Runner-up",
     )
-    plt.bar(
+    axes[1].bar(
         x,
-        ordered["third_place_rate"],
-        bottom=ordered["champion_rate"] + ordered["runner_up_rate"],
+        ordered_champ["third_place_rate"],
+        bottom=ordered_champ["champion_rate"] + ordered_champ["runner_up_rate"],
         label="Third place",
     )
-    plt.xticks(rotation=45, ha="right")
-    plt.ylabel("Rate Across Seeds")
-    plt.title("Podium Composition Across Seeds")
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(os.path.join(PLOT_DIR, f"{name}_podium_stacked.png"))
-    plt.close()
+    axes[1].set_title("Podium Composition Across Seeds")
+    axes[1].set_ylabel("Rate Across Seeds")
+    axes[1].tick_params(axis="x", rotation=45)
+    axes[1].legend(loc="upper right")
 
+    # 3) Match performance (bar + line)
+    x_idx = range(len(ordered_match["strategy"]))
+    axes[2].bar(x_idx, ordered_match["match_win_rate"], color="steelblue")
+    axes[2].set_xticks(list(x_idx))
+    axes[2].set_xticklabels(ordered_match["strategy"], rotation=45, ha="right")
+    axes[2].set_ylabel("Match Win Rate", color="steelblue")
+    axes[2].tick_params(axis="y", labelcolor="steelblue")
+    axes[2].set_title("Bracket Match Performance")
 
-def plot_bracket_match_performance(df, name):
-    ordered = df.sort_values("match_win_rate", ascending=False)
-
-    fig, ax1 = plt.subplots(figsize=(11, 6))
-    ax1.bar(ordered["strategy"], ordered["match_win_rate"], color="steelblue")
-    ax1.set_ylabel("Match Win Rate", color="steelblue")
-    ax1.tick_params(axis="y", labelcolor="steelblue")
-    ax1.set_xticks(range(len(ordered["strategy"])))
-    ax1.set_xticklabels(ordered["strategy"], rotation=45, ha="right")
-
-    ax2 = ax1.twinx()
-    ax2.plot(
-        range(len(ordered["strategy"])),
-        ordered["avg_match_score"],
-        color="darkorange",
-        marker="o",
-    )
+    ax2 = axes[2].twinx()
+    ax2.plot(x_idx, ordered_match["avg_match_score"], color="darkorange", marker="o")
     ax2.set_ylabel("Average Match Score", color="darkorange")
     ax2.tick_params(axis="y", labelcolor="darkorange")
 
-    ax1.set_title("Bracket Match Performance: Win Rate and Average Score")
-    fig.tight_layout()
-    fig.savefig(os.path.join(PLOT_DIR, f"{name}_match_performance.png"))
+    config_text = parse_config_from_name(base_name, "bracket")
+    fig.suptitle(f"{game_name} | Bracket Summary\n{config_text}", fontsize=13)
+    fig.tight_layout(rect=[0, 0.03, 1, 0.90])
+    out = os.path.join(PLOT_DIR, f"{base_name}_combined.png")
+    fig.savefig(out)
     plt.close(fig)
+    return out
 
 
-def plot_file(json_file):
+def plot_file(json_file, game_name):
     base_name = os.path.splitext(os.path.basename(json_file))[0]
     data = load_json_data(json_file)
     result_type = detect_result_type(data)
 
     if result_type == "tournament":
         df = pd.DataFrame(data["summary_rows"]).sort_values("win_rate", ascending=False)
-        plot_tournament_win_rate(df, base_name)
-        plot_tournament_score_std(df, base_name)
-        if "rank_samples" in data:
-            plot_rank_boxplot(data, base_name)
-        plot_evolution_top_rate(data, base_name)
-        return f"Tournament plots generated for {base_name}"
+        out = save_tournament_combo(df, data, base_name, game_name)
+        return f"Tournament combined plot generated: {out}"
 
     if result_type == "bracket":
         df = pd.DataFrame(data["summary_rows"]).sort_values("champion_rate", ascending=False)
-        plot_bracket_champion_rate(df, base_name)
-        plot_bracket_podium_stacked(df, base_name)
-        plot_bracket_match_performance(df, base_name)
-        return f"Bracket plots generated for {base_name}"
+        out = save_bracket_combo(df, base_name, game_name)
+        return f"Bracket combined plot generated: {out}"
 
     return f"Skipped unsupported JSON schema: {base_name}"
 
@@ -217,13 +213,19 @@ def plot_file(json_file):
 def parse_args():
     parser = argparse.ArgumentParser(
         description=(
-            "Generate plots from tournament and/or bracket JSON results. "
+            "Generate one combined 3-panel image per tournament/bracket JSON. "
             "Default: latest tournament + latest bracket."
         )
     )
     parser.add_argument("--json-file", type=str, default=None, help="Single JSON file to process")
     parser.add_argument("--tournament-json", type=str, default=None, help="Tournament JSON file")
     parser.add_argument("--bracket-json", type=str, default=None, help="Bracket JSON file")
+    parser.add_argument(
+        "--game-name",
+        type=str,
+        default="Prisoner's Dilemma",
+        help="Game name shown in combined chart title",
+    )
     return parser.parse_args()
 
 
@@ -239,7 +241,7 @@ def main():
         if not os.path.exists(json_file):
             messages.append(f"Skipped missing file: {json_file}")
             continue
-        messages.append(plot_file(json_file))
+        messages.append(plot_file(json_file, args.game_name))
 
     for msg in messages:
         print(msg)
