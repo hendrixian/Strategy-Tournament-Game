@@ -14,9 +14,11 @@ import numpy as np
 
 from evolution import EvolutionaryDynamics
 from payoff import PayoffMatrix
+import payoff
 from strategies import get_all_strategies
 from tournament import Tournament
 
+GAME_TYPE = PayoffMatrix.MATCHING_PENNIES
 
 class Tee:
     """Write output to both terminal and a file."""
@@ -57,7 +59,7 @@ def run_tournament_for_seed(
     np.random.seed(seed)
 
     strategies = get_all_strategies()
-    payoff = PayoffMatrix(PayoffMatrix.PRISONERS_DILEMMA)
+    payoff = PayoffMatrix(GAME_TYPE)
 
     tournament = Tournament(strategies, payoff, rounds_per_match=rounds, noise=noise)
     results = tournament.run_round_robin()
@@ -88,7 +90,7 @@ def run_tournament_for_seed(
     )
 
 
-def summarize_runs(runs: List[SeedRunResult]) -> Dict[str, Any]:
+def summarize_runs(runs: List[SeedRunResult], game_name: str) -> Dict[str, Any]:
     """Compute aggregate statistics across all runs."""
     strategy_names = sorted(runs[0].scores.keys())
 
@@ -146,6 +148,7 @@ def summarize_runs(runs: List[SeedRunResult]) -> Dict[str, Any]:
         "summary_rows": summary_rows,
         "winners_by_seed": [(run.seed, run.winner) for run in runs],
         "rank_samples": rank_samples,
+        "game_name": game_name,
         "evolution_summary_rows": evolution_summary_rows,
         "evolution_winners_by_seed": [
             (run.seed, max(run.evolution_final_population.items(), key=lambda item: item[1])[0])
@@ -303,7 +306,7 @@ def main() -> None:
         if args.detail_level != "summary":
             print_run_details(run, args.detail_level)
 
-    summary = summarize_runs(runs)
+    summary = summarize_runs(runs, GAME_TYPE)
     print_summary(summary)
 
     json_out = outfile.replace(".txt", ".json")

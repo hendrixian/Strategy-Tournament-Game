@@ -1,0 +1,17 @@
+game,strategy,is_ess,fitness_against_self
+Prisoner's Dilemma,Always Cooperate,False,3.0
+Prisoner's Dilemma,Always Defect,True,1.0
+Prisoner's Dilemma,Tit for Tat,False,3.0
+Prisoner's Dilemma,Tit for Two Tats,False,3.0
+Prisoner's Dilemma,Random,True,3.2
+Prisoner's Dilemma,Grudger,False,3.0
+Prisoner's Dilemma,Pavlov,False,3.0
+Prisoner's Dilemma,Adaptive TFT,False,3.0
+Stag Hunt,Always Cooperate,False,3.0
+Stag Hunt,Always Defect,True,1.0
+Stag Hunt,Tit for Tat,False,3.0
+Stag Hunt,Tit for Two Tats,False,3.0
+Stag Hunt,Random,False,2.3
+Stag Hunt,Grudger,False,3.0
+Stag Hunt,Pavlov,False,3.0
+Stag Hunt,Adaptive TFT,False,3.0

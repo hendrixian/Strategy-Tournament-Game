@@ -1,0 +1,634 @@
+{
+  "total_runs": 30,
+  "summary_rows": [
+    {
+      "strategy": "Adaptive TFT",
+      "win_count": 30,
+      "win_rate": 1.0,
+      "avg_rank": 1,
+      "avg_score": 4.066666666666666,
+      "std_score": 0.3609008632665985
+    },
+    {
+      "strategy": "Pavlov",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 2.033333333333333,
+      "avg_score": 2.5714285714285716,
+      "std_score": 0.31943828249996997
+    },
+    {
+      "strategy": "Grudger",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 3.1,
+      "avg_score": 1.1714285714285715,
+      "std_score": 0.35837881375670055
+    },
+    {
+      "strategy": "Random",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 4.466666666666667,
+      "avg_score": -0.21904761904761905,
+      "std_score": 0.9270928398962254
+    },
+    {
+      "strategy": "Tit for Two Tats",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 4.533333333333333,
+      "avg_score": -0.580952380952381,
+      "std_score": 0.27338476370299664
+    },
+    {
+      "strategy": "Tit for Tat",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 5.933333333333334,
+      "avg_score": -1.7333333333333334,
+      "std_score": 0.3013198479915499
+    },
+    {
+      "strategy": "Always Defect",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 7.3,
+      "avg_score": -2.5238095238095237,
+      "std_score": 0.2888714454876782
+    },
+    {
+      "strategy": "Always Cooperate",
+      "win_count": 0,
+      "win_rate": 0.0,
+      "avg_rank": 7.633333333333334,
+      "avg_score": -2.7523809523809524,
+      "std_score": 0.3192962783664802
+    }
+  ],
+  "winners_by_seed": [
+    [
+      0,
+      "Adaptive TFT"
+    ],
+    [
+      1,
+      "Adaptive TFT"
+    ],
+    [
+      2,
+      "Adaptive TFT"
+    ],
+    [
+      3,
+      "Adaptive TFT"
+    ],
+    [
+      4,
+      "Adaptive TFT"
+    ],
+    [
+      5,
+      "Adaptive TFT"
+    ],
+    [
+      6,
+      "Adaptive TFT"
+    ],
+    [
+      7,
+      "Adaptive TFT"
+    ],
+    [
+      8,
+      "Adaptive TFT"
+    ],
+    [
+      9,
+      "Adaptive TFT"
+    ],
+    [
+      10,
+      "Adaptive TFT"
+    ],
+    [
+      11,
+      "Adaptive TFT"
+    ],
+    [
+      12,
+      "Adaptive TFT"
+    ],
+    [
+      13,
+      "Adaptive TFT"
+    ],
+    [
+      14,
+      "Adaptive TFT"
+    ],
+    [
+      15,
+      "Adaptive TFT"
+    ],
+    [
+      16,
+      "Adaptive TFT"
+    ],
+    [
+      17,
+      "Adaptive TFT"
+    ],
+    [
+      18,
+      "Adaptive TFT"
+    ],
+    [
+      19,
+      "Adaptive TFT"
+    ],
+    [
+      20,
+      "Adaptive TFT"
+    ],
+    [
+      21,
+      "Adaptive TFT"
+    ],
+    [
+      22,
+      "Adaptive TFT"
+    ],
+    [
+      23,
+      "Adaptive TFT"
+    ],
+    [
+      24,
+      "Adaptive TFT"
+    ],
+    [
+      25,
+      "Adaptive TFT"
+    ],
+    [
+      26,
+      "Adaptive TFT"
+    ],
+    [
+      27,
+      "Adaptive TFT"
+    ],
+    [
+      28,
+      "Adaptive TFT"
+    ],
+    [
+      29,
+      "Adaptive TFT"
+    ]
+  ],
+  "rank_samples": {
+    "Adaptive TFT": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Always Cooperate": [
+      7,
+      8,
+      8,
+      7,
+      8,
+      8,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      7,
+      8,
+      7,
+      8,
+      8,
+      8,
+      8,
+      7,
+      8,
+      8,
+      8,
+      8,
+      7,
+      8,
+      7,
+      8,
+      8,
+      7
+    ],
+    "Always Defect": [
+      8,
+      7,
+      7,
+      8,
+      6,
+      7,
+      8,
+      8,
+      8,
+      7,
+      7,
+      7,
+      8,
+      6,
+      8,
+      7,
+      7,
+      7,
+      7,
+      8,
+      7,
+      7,
+      7,
+      7,
+      8,
+      7,
+      8,
+      7,
+      7,
+      8
+    ],
+    "Grudger": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      3,
+      4,
+      4,
+      3
+    ],
+    "Pavlov": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "Random": [
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      3,
+      6,
+      5,
+      5,
+      6,
+      7,
+      5,
+      4,
+      4,
+      5,
+      5,
+      4,
+      4,
+      5,
+      4,
+      5,
+      5,
+      3,
+      5,
+      3,
+      3,
+      4
+    ],
+    "Tit for Tat": [
+      6,
+      6,
+      6,
+      6,
+      7,
+      6,
+      6,
+      6,
+      6,
+      5,
+      6,
+      6,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "Tit for Two Tats": [
+      4,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      4,
+      4,
+      5,
+      5,
+      4,
+      5,
+      4,
+      4,
+      5,
+      4,
+      5,
+      5,
+      5
+    ]
+  },
+  "game_name": "Matching Pennies",
+  "evolution_summary_rows": [
+    {
+      "strategy": "Always Cooperate",
+      "top_final_pop_count": 30,
+      "top_final_pop_rate": 1.0,
+      "avg_final_population": 0.125,
+      "std_final_population": 0.0
+    },
+    {
+      "strategy": "Adaptive TFT",
+      "top_final_pop_count": 0,
+      "top_final_pop_rate": 0.0,
+      "avg_final_population": 0.125,
+      "std_final_population": 0.0
+    },
+    {
+      "strategy": "Always Defect",
+      "top_final_pop_count": 0,
+      "top_final_pop_rate": 0.0,
+      "avg_final_population": 0.125,
+      "std_final_population": 0.0
+    },
+    {
+      "strategy": "Grudger",
+      "top_final_pop_count": 0,
+      "top_final_pop_rate": 0.0,
+      "avg_final_population": 0.125,
+      "std_final_population": 0.0
+    },
+    {
+      "strategy": "Pavlov",
+      "top_final_pop_count": 0,
+      "top_final_pop_rate": 0.0,
+      "avg_final_population": 0.125,
+      "std_final_population": 0.0
+    },
+    {
+      "strategy": "Random",
+      "top_final_pop_count": 0,
+      "top_final_pop_rate": 0.0,
+      "avg_final_population": 0.125,
+      "std_final_population": 0.0
+    },
+    {
+      "strategy": "Tit for Tat",
+      "top_final_pop_count": 0,
+      "top_final_pop_rate": 0.0,
+      "avg_final_population": 0.125,
+      "std_final_population": 0.0
+    },
+    {
+      "strategy": "Tit for Two Tats",
+      "top_final_pop_count": 0,
+      "top_final_pop_rate": 0.0,
+      "avg_final_population": 0.125,
+      "std_final_population": 0.0
+    }
+  ],
+  "evolution_winners_by_seed": [
+    [
+      0,
+      "Always Cooperate"
+    ],
+    [
+      1,
+      "Always Cooperate"
+    ],
+    [
+      2,
+      "Always Cooperate"
+    ],
+    [
+      3,
+      "Always Cooperate"
+    ],
+    [
+      4,
+      "Always Cooperate"
+    ],
+    [
+      5,
+      "Always Cooperate"
+    ],
+    [
+      6,
+      "Always Cooperate"
+    ],
+    [
+      7,
+      "Always Cooperate"
+    ],
+    [
+      8,
+      "Always Cooperate"
+    ],
+    [
+      9,
+      "Always Cooperate"
+    ],
+    [
+      10,
+      "Always Cooperate"
+    ],
+    [
+      11,
+      "Always Cooperate"
+    ],
+    [
+      12,
+      "Always Cooperate"
+    ],
+    [
+      13,
+      "Always Cooperate"
+    ],
+    [
+      14,
+      "Always Cooperate"
+    ],
+    [
+      15,
+      "Always Cooperate"
+    ],
+    [
+      16,
+      "Always Cooperate"
+    ],
+    [
+      17,
+      "Always Cooperate"
+    ],
+    [
+      18,
+      "Always Cooperate"
+    ],
+    [
+      19,
+      "Always Cooperate"
+    ],
+    [
+      20,
+      "Always Cooperate"
+    ],
+    [
+      21,
+      "Always Cooperate"
+    ],
+    [
+      22,
+      "Always Cooperate"
+    ],
+    [
+      23,
+      "Always Cooperate"
+    ],
+    [
+      24,
+      "Always Cooperate"
+    ],
+    [
+      25,
+      "Always Cooperate"
+    ],
+    [
+      26,
+      "Always Cooperate"
+    ],
+    [
+      27,
+      "Always Cooperate"
+    ],
+    [
+      28,
+      "Always Cooperate"
+    ],
+    [
+      29,
+      "Always Cooperate"
+    ]
+  ],
+  "evolution_avg_fitness": {
+    "mean": -0.6704166666666667,
+    "std": 0.022817969283488438
+  }
+}

@@ -194,44 +194,43 @@ def main():
                 # Store results for radar analysis
                 st.session_state.tournament_results = results
                 st.session_state.tournament = tournament
-                
                 # Match history example
-                st.subheader("Example Match Analysis")
-                if results['match_results']:
-                    # Let user select a match
-                    match_options = [f"{m['strategy1']} vs {m['strategy2']}" 
-                                   for m in results['match_results']]
-                    selected_match = st.selectbox("Select a match to analyze:", match_options)
+                #st.subheader("Example Match Analysis")
+               # if results['match_results']:
+                #    # Let user select a match
+                 #   match_options = [f"{m['strategy1']} vs {m['strategy2']}" 
+                  #                 for m in results['match_results']]
+                   # selected_match = st.selectbox("Select a match to analyze:", match_options)
                     
-                    match_idx = match_options.index(selected_match)
-                    match_data = results['match_results'][match_idx]
+                    #match_idx = match_options.index(selected_match)
+                    #match_data = results['match_results'][match_idx]
                     
-                    col1, col2 = st.columns(2)
+                    #col1, col2 = st.columns(2)
                     
-                    with col1:
+                    #with col1:
                         # Match summary
-                        st.metric(f"{match_data['strategy1']} Score", 
-                                 f"{match_data['score1']:.2f}")
-                        st.metric(f"{match_data['strategy2']} Score", 
-                                 f"{match_data['score2']:.2f}")
+                     #   st.metric(f"{match_data['strategy1']} Score", 
+                       #          f"{match_data['score1']:.2f}")
+                      #  st.metric(f"{match_data['strategy2']} Score", 
+                        #         f"{match_data['score2']:.2f}")
                         
                         # Cooperation rates in this match
-                        history = match_data.get('history', [])
-                        if history:
-                            coop1 = sum(1 for h in history if h[0] == 'C') / len(history)
-                            coop2 = sum(1 for h in history if h[1] == 'C') / len(history)
-                            st.metric(f"{match_data['strategy1']} Cooperation", 
-                                     f"{coop1:.1%}")
-                            st.metric(f"{match_data['strategy2']} Cooperation", 
-                                     f"{coop2:.1%}")
+                        #history = match_data.get('history', [])
+                        #if history:
+                         #   coop1 = sum(1 for h in history if h[0] == 'C') / len(history)
+                          #  coop2 = sum(1 for h in history if h[1] == 'C') / len(history)
+                           # st.metric(f"{match_data['strategy1']} Cooperation", 
+                            #         f"{coop1:.1%}")
+                          #  st.metric(f"{match_data['strategy2']} Cooperation", 
+                                  #   f"{coop2:.1%}")
                     
-                    with col2:
-                        # Plot match history
-                        if history:
-                            fig, ax = plt.subplots(figsize=(10, 4))
-                            analyzer.plot_match_history(history, ax)
-                            st.pyplot(fig)
-                            plt.close(fig)
+                #    with col2:
+                 #       # Plot match history
+                  #      if history:
+                   #         fig, ax = plt.subplots(figsize=(10, 4))
+                    #        analyzer.plot_match_history(history, ax)
+                     #       st.pyplot(fig)
+                      #      plt.close(fig)
     
     with tab2:
         st.markdown('<h2 class="sub-header">Evolutionary Dynamics</h2>', unsafe_allow_html=True)
@@ -416,6 +415,46 @@ def main():
             2. But (D,D) gives worse outcomes than (C,C)
             
             Conditions: T > R > P > S and 2R > T + S
+            """)
+
+        with st.expander("Snowdrift Game (Chicken)"):
+            st.markdown("""
+            The Snowdrift Game models a situation where cooperation is beneficial
+            but costly, and unilateral defection can be tempting:
+            - If both cooperate: Both get **R**
+            - If both defect: Both get **P** (worst outcome)
+            - If one cooperates and one defects: Defector gets **T**, cooperator gets **S**
+
+            Key idea:
+            - Best response is often to do the opposite of the other player
+            - Mixed or alternating behavior is common
+
+            Conditions: T > R > S > P
+            """)
+
+        with st.expander("Stag Hunt"):
+            st.markdown("""
+            The Stag Hunt is a coordination game about trust:
+            - If both cooperate: Both get **R** (best outcome)
+            - If both defect: Both get **P** (safe but lower)
+            - If one cooperates and one defects: Cooperator gets **S**, defector gets **T**
+
+            Key idea:
+            - Cooperation is best but risky if the other player defects
+            - Two equilibria exist: (C,C) and (D,D)
+
+            Conditions: R > T >= P > S
+            """)
+
+        with st.expander("Matching Pennies"):
+            st.markdown("""
+            Matching Pennies is a zero-sum game:
+            - One player wins if moves match, the other wins if they differ
+            - There is no mutually good outcome
+
+            Key idea:
+            - No stable pure strategy
+            - The only equilibrium is mixed (randomized) play
             """)
         
         with st.expander("Nash Equilibrium"):
@@ -1037,9 +1076,9 @@ def main():
             clf, features, X_train, X_test, y_train, y_test = train_decision_tree(df)
             #Accuracy
             #Decision rules
-            st.subheader("Decision Rules")
-            rules=export_text(clf, feature_names=features)
-            st.text(rules)
+            #st.subheader("Decision Rules")
+            #rules=export_text(clf, feature_names=features)
+            #st.text(rules)
             #decision path
            # st.subheader("Decision Path Example")
             #sample=X_test.iloc[0]

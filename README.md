@@ -1,4 +1,4 @@
-# Strategy Tournament Game: An Interactive Game Theory Simulator
+﻿# Strategy Tournament Game: An Interactive Game Theory Simulator
 
 ![Game Theory](https://img.shields.io/badge/Game-Theory-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-green)
@@ -6,7 +6,6 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 An interactive game-theory sandbox for exploring how classic strategies behave across repeated 2-player games.
-
 
 ## Features
 **Strategy Tournament Game** lets you run tournaments and simulations between well-known decision strategies such as:
@@ -20,18 +19,17 @@ An interactive game-theory sandbox for exploring how classic strategies behave a
 - Adaptive variants
 
 You can analyze outcomes in several classic games:
-- Prisoner’s Dilemma
+- Prisoner's Dilemma
 - Snowdrift (Chicken)
 - Stag Hunt
 - Matching Pennies
 
 ## Main Capabilities
-- **Round-robin tournaments** with per-strategy scoring and rankings.
-- **Single match drill-downs** with round-by-round move/payoff history.
-- **Game analysis** including pure/mixed equilibrium summaries.
-- **Evolution simulations** to observe population shifts over generations.
-- **Visual analytics** (heatmaps, trend plots, and strategy comparison views).
-
+- Round-robin tournaments with per-strategy scoring and rankings.
+- Single match drill-downs with round-by-round move/payoff history.
+- Game analysis including pure/mixed equilibrium summaries.
+- Evolution simulations to observe population shifts over generations.
+- Visual analytics (heatmaps, trend plots, and strategy comparison views).
 
 ## Quick Start
 
@@ -61,40 +59,90 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Running the Application
+## Running the Application
 
-#### Option 1: Web Interface (Recommended)
+### Option 1: Web Interface (Recommended)
 ```bash
 streamlit run app.py
 ```
-Then open your browser to `http://localhost:8501`
+Then open your browser to `http://localhost:8501`.
 
-#### Option 2: Command Line Interface
+### Option 2: Command Line Interface
 ```bash
 python main.py
 ```
-#### Web App link
-`https://strategytournament.streamlit.app/`
+
+Web app: `https://strategytournament.streamlit.app/`
+
+## Running Simulation Scripts
+
+Run simulation scripts from the project root with module syntax so imports resolve correctly.
+
+### Multi-seed tournament run
+```bash
+python -m simulation.test_simulation --num-seeds 30 --start-seed 0 --rounds 50 --noise 0.2
+```
+
+### Plot latest results
+```bash
+python -m simulation.plot
+```
+
+Notes:
+- Do not add a trailing `--` to the command unless you are forwarding extra args intentionally.
+- Running `python simulation/test_simulation.py` directly can fail with import errors depending on working directory.
+
+## Results Files
+
+Tournament runs write files to `results/`:
+- `*.txt`: detailed terminal output capture.
+- `*.json`: aggregate metrics used by plotting.
+
+`simulation.plot` expects JSON data with keys including `summary_rows` and `rank_samples`.
+
+## Troubleshooting
+
+### `ModuleNotFoundError: No module named 'payoff'`
+Use module execution from project root:
+```bash
+python -m simulation.test_simulation ...
+```
+
+### `KeyError: 'rank_samples'` when running plot
+This means the selected JSON file is from an older output format that does not include `rank_samples`.
+Generate a new JSON via:
+```bash
+python -m simulation.test_simulation --num-seeds 2 --start-seed 0 --rounds 10 --noise 0.2
+```
+Then run:
+```bash
+python -m simulation.plot
+```
 
 ## Project Structure
 
-```
-strategy_tournament/
-├── app.py                     # Streamlit UI
-├── main.py                    # CLI entry point
-├── strategies.py              # Strategy implementations
-├── payoff.py                  # Payoff matrices + game-theory analysis
-├── tournament.py              # Tournament engine
-├── evolution.py               # Evolutionary dynamics
-├── analysis.py                # Plotting + analysis helpers
-├── bracket.py                 # Bracket/tournament helpers
-├── bracket_visualization.py   # Bracket visual outputs
-├── decision_tree_analysis.py  # Decision-tree based analysis helpers
-├── requirements.txt
-└── README.md
+```text
+strategy/
+|- app.py
+|- main.py
+|- strategies.py
+|- payoff.py
+|- tournament.py
+|- evolution.py
+|- analysis.py
+|- bracket.py
+|- bracket_visualization.py
+|- decision_tree_analysis.py
+|- simulation/
+|  |- __init__.py
+|  |- test_simulation.py
+|  |- plot.py
+|- results/
+|- requirements.txt
+`- README.md
 ```
 
-## Typical experiments
+## Typical Experiments
 
 1. **Tournament robustness**
    - Vary rounds per match and noise.
@@ -112,24 +160,19 @@ strategy_tournament/
    - Tune mutation rate and number of generations.
    - Track long-run survival of strategy families.
 
----
-
-## Who this is for
+## Who This Is For
 
 - Students learning repeated games and strategic adaptation.
 - Instructors demonstrating game-theory ideas interactively.
 - Hobbyists experimenting with strategy ecosystems.
 - Researchers needing a lightweight sandbox for quick comparisons.
 
----
+## License
 
-##  License
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Acknowledgments
 
-##  Acknowledgments
-
-- Inspired by Robert Axelrod's famous Prisoner's Dilemma tournaments
-- Based on concepts from evolutionary game theory
-- Built with amazing open-source tools (Python, Streamlit, Matplotlib)
-
+- Inspired by Robert Axelrod's famous Prisoner's Dilemma tournaments.
+- Based on concepts from evolutionary game theory.
+- Built with Python, Streamlit, and Matplotlib.

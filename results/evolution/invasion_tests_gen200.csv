@@ -1,0 +1,22 @@
+game,resident,mutant,initial_mutant_share,final_mutant_share,invaded
+Prisoner's Dilemma,Always Defect,Always Cooperate,0.05,0.0,False
+Prisoner's Dilemma,Always Defect,Tit for Tat,0.05,3.794574839935219e-10,False
+Prisoner's Dilemma,Always Defect,Tit for Two Tats,0.05,5.026695855422424e-21,False
+Prisoner's Dilemma,Always Defect,Random,0.05,5.150952784700523e-46,False
+Prisoner's Dilemma,Always Defect,Grudger,0.05,3.794574839935232e-10,False
+Prisoner's Dilemma,Always Defect,Pavlov,0.05,3.794574839935219e-10,False
+Prisoner's Dilemma,Always Defect,Adaptive TFT,0.05,3.794574839935219e-10,False
+Prisoner's Dilemma,Random,Always Cooperate,0.05,3.980047737354163e-46,False
+Prisoner's Dilemma,Random,Always Defect,0.05,2.2725194345273076e-30,False
+Prisoner's Dilemma,Random,Tit for Tat,0.05,2.5535693600009248e-30,False
+Prisoner's Dilemma,Random,Tit for Two Tats,0.05,4.537055966670705e-52,False
+Prisoner's Dilemma,Random,Grudger,0.05,1.0,True
+Prisoner's Dilemma,Random,Pavlov,0.05,4.476833172378312e-09,False
+Prisoner's Dilemma,Random,Adaptive TFT,0.05,0.9999995502464929,True
+Stag Hunt,Always Defect,Always Cooperate,0.05,0.0,False
+Stag Hunt,Always Defect,Tit for Tat,0.05,0.05,False
+Stag Hunt,Always Defect,Tit for Two Tats,0.05,6.71374453248373e-21,False
+Stag Hunt,Always Defect,Random,0.05,4.2483959178492816e-46,False
+Stag Hunt,Always Defect,Grudger,0.05,0.05,False
+Stag Hunt,Always Defect,Pavlov,0.05,0.05,False
+Stag Hunt,Always Defect,Adaptive TFT,0.05,0.05,False

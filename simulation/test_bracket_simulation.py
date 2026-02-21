@@ -13,6 +13,8 @@ from typing import Any, Dict, List
 
 import numpy as np
 
+import payoff
+
 # Make project root importable when running this file directly.
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -21,6 +23,8 @@ if str(PROJECT_ROOT) not in sys.path:
 from bracket import BracketTournament
 from payoff import PayoffMatrix
 from strategies import get_all_strategies
+
+GAME_TYPE = PayoffMatrix.PRISONERS_DILEMMA
 
 
 class Tee:
@@ -55,7 +59,7 @@ def run_bracket_for_seed(seed: int, rounds: int, noise: float, bracket_type: str
     np.random.seed(seed)
 
     strategies = get_all_strategies()
-    payoff = PayoffMatrix(PayoffMatrix.PRISONERS_DILEMMA)
+    payoff = PayoffMatrix(GAME_TYPE)
     bracket = BracketTournament(
         strategies=strategies,
         payoff_matrix=payoff,
@@ -75,7 +79,7 @@ def run_bracket_for_seed(seed: int, rounds: int, noise: float, bracket_type: str
     )
 
 
-def summarize_runs(runs: List[SeedRunResult]) -> Dict[str, Any]:
+def summarize_runs(runs: List[SeedRunResult], game_name: str) -> Dict[str, Any]:
     """Compute aggregate statistics across all runs."""
     strategy_names = sorted([s.name for s in get_all_strategies()])
 
@@ -147,6 +151,7 @@ def summarize_runs(runs: List[SeedRunResult]) -> Dict[str, Any]:
     return {
         "total_runs": total_runs,
         "summary_rows": strategy_rows,
+        "game_name": game_name,
         "champions_by_seed": [(run.seed, run.champion) for run in runs],
         "runner_ups_by_seed": [(run.seed, run.runner_up) for run in runs],
         "third_places_by_seed": [(run.seed, run.third_place) for run in runs],
@@ -279,7 +284,7 @@ def main() -> None:
         if args.detail_level != "summary":
             print_run_details(run, args.detail_level)
 
-    summary = summarize_runs(runs)
+    summary = summarize_runs(runs, GAME_TYPE)
     print_summary(summary)
 
     json_out = outfile.replace(".txt", ".json")

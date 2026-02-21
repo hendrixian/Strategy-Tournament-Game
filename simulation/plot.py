@@ -1,4 +1,4 @@
-import argparse
+﻿import argparse
 import glob
 import json
 import os
@@ -199,7 +199,8 @@ def plot_file(json_file, game_name):
 
     if result_type == "tournament":
         df = pd.DataFrame(data["summary_rows"]).sort_values("win_rate", ascending=False)
-        out = save_tournament_combo(df, data, base_name, game_name)
+        actual_game_name = data.get("game_name", game_name)
+        out = save_tournament_combo(df, data, base_name, actual_game_name)
         return f"Tournament combined plot generated: {out}"
 
     if result_type == "bracket":

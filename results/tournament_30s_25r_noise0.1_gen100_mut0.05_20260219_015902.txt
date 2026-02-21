@@ -1,0 +1,1386 @@
+Output saved to: results\tournament_30s_25r_noise0.1_gen100_mut0.05_20260219_015902.txt
+Running multi-seed tournament + evolution experiment
+Configuration: num_seeds=30, start_seed=0, rounds=25, noise=0.1, generations=100, mutation_rate=0.05
+==========================================================================================
+Run seed=0
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(21.00, -21.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-17.00, 17.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(-9.00, 9.00)
+  Match 05: Always Cooperate vs Grudger | scores=(11.00, -11.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-7.00, 7.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-15.00, 15.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 10: Always Defect vs Random | scores=(3.00, -3.00)
+  Match 11: Always Defect vs Grudger | scores=(-15.00, 15.00)
+  Match 12: Always Defect vs Pavlov | scores=(-13.00, 13.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-15.00, 15.00)
+  Match 15: Tit for Tat vs Random | scores=(1.00, -1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-15.00, 15.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(11.00, -11.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 19: Tit for Two Tats vs Random | scores=(15.00, -15.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-13.00, 13.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-3.00, 3.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 23: Random vs Grudger | scores=(11.00, -11.00)
+  Match 24: Random vs Pavlov | scores=(9.00, -9.00)
+  Match 25: Random vs Adaptive TFT | scores=(-3.00, 3.00)
+  Match 26: Grudger vs Pavlov | scores=(-11.00, 11.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(7.00, -7.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=9.0000
+  #2: Tit for Two Tats     score=5.0000
+  #3: Pavlov               score=3.0000
+  #4: Random               score=1.0000
+  #5: Tit for Tat          score=-0.7143
+  #6: Grudger              score=-1.2857
+  #7: Always Cooperate     score=-4.7143
+  #8: Always Defect        score=-11.2857
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=1
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-13.00, 13.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-15.00, 15.00)
+  Match 04: Always Cooperate vs Random | scores=(1.00, -1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(3.00, -3.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-11.00, 11.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-9.00, 9.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 10: Always Defect vs Random | scores=(-3.00, 3.00)
+  Match 11: Always Defect vs Grudger | scores=(-17.00, 17.00)
+  Match 12: Always Defect vs Pavlov | scores=(-7.00, 7.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 15: Tit for Tat vs Random | scores=(-1.00, 1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-13.00, 13.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-23.00, 23.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(3.00, -3.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-1.00, 1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-17.00, 17.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-5.00, 5.00)
+  Match 23: Random vs Grudger | scores=(-1.00, 1.00)
+  Match 24: Random vs Pavlov | scores=(-3.00, 3.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-19.00, 19.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-3.00, 3.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-11.00, 11.00)
+Step 4/4: Final rankings
+  #1: Pavlov               score=9.8571
+  #2: Adaptive TFT         score=6.4286
+  #3: Grudger              score=2.1429
+  #4: Tit for Two Tats     score=0.1429
+  #5: Random               score=-0.1429
+  #6: Tit for Tat          score=-3.0000
+  #7: Always Cooperate     score=-4.7143
+  #8: Always Defect        score=-10.7143
+Winner: Pavlov
+==========================================================================================
+Run seed=2
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(23.00, -23.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-21.00, 21.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 04: Always Cooperate vs Random | scores=(-7.00, 7.00)
+  Match 05: Always Cooperate vs Grudger | scores=(11.00, -11.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-9.00, 9.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 10: Always Defect vs Random | scores=(5.00, -5.00)
+  Match 11: Always Defect vs Grudger | scores=(-15.00, 15.00)
+  Match 12: Always Defect vs Pavlov | scores=(-23.00, 23.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 15: Tit for Tat vs Random | scores=(1.00, -1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-21.00, 21.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-11.00, 11.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 19: Tit for Two Tats vs Random | scores=(1.00, -1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-5.00, 5.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-9.00, 9.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(-11.00, 11.00)
+  Match 24: Random vs Pavlov | scores=(7.00, -7.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-7.00, 7.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(1.00, -1.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=10.1429
+  #2: Pavlov               score=7.5714
+  #3: Grudger              score=3.2857
+  #4: Tit for Two Tats     score=1.0000
+  #5: Random               score=-0.7143
+  #6: Tit for Tat          score=-3.5714
+  #7: Always Cooperate     score=-4.4286
+  #8: Always Defect        score=-13.2857
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=3
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-7.00, 7.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(1.00, -1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(9.00, -9.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-19.00, 19.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 10: Always Defect vs Random | scores=(-5.00, 5.00)
+  Match 11: Always Defect vs Grudger | scores=(-19.00, 19.00)
+  Match 12: Always Defect vs Pavlov | scores=(5.00, -5.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-5.00, 5.00)
+  Match 15: Tit for Tat vs Random | scores=(-11.00, 11.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-3.00, 3.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(3.00, -3.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-5.00, 5.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-1.00, 1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-11.00, 11.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-17.00, 17.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 23: Random vs Grudger | scores=(-5.00, 5.00)
+  Match 24: Random vs Pavlov | scores=(1.00, -1.00)
+  Match 25: Random vs Adaptive TFT | scores=(1.00, -1.00)
+  Match 26: Grudger vs Pavlov | scores=(-1.00, 1.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(19.00, -19.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=7.8571
+  #2: Pavlov               score=5.2857
+  #3: Random               score=1.8571
+  #4: Grudger              score=1.2857
+  #5: Tit for Tat          score=0.7143
+  #6: Tit for Two Tats     score=-1.5714
+  #7: Always Cooperate     score=-3.8571
+  #8: Always Defect        score=-11.5714
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=4
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-7.00, 7.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 04: Always Cooperate vs Random | scores=(1.00, -1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(7.00, -7.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-17.00, 17.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(1.00, -1.00)
+  Match 10: Always Defect vs Random | scores=(5.00, -5.00)
+  Match 11: Always Defect vs Grudger | scores=(-13.00, 13.00)
+  Match 12: Always Defect vs Pavlov | scores=(-11.00, 11.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-5.00, 5.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-19.00, 19.00)
+  Match 15: Tit for Tat vs Random | scores=(-3.00, 3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-7.00, 7.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-13.00, 13.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 19: Tit for Two Tats vs Random | scores=(1.00, -1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-17.00, 17.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-17.00, 17.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(-3.00, 3.00)
+  Match 24: Random vs Pavlov | scores=(-3.00, 3.00)
+  Match 25: Random vs Adaptive TFT | scores=(5.00, -5.00)
+  Match 26: Grudger vs Pavlov | scores=(-15.00, 15.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-13.00, 13.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=10.1429
+  #2: Pavlov               score=8.4286
+  #3: Grudger              score=1.0000
+  #4: Random               score=-0.7143
+  #5: Always Cooperate     score=-3.0000
+  #6: Tit for Two Tats     score=-3.0000
+  #7: Tit for Tat          score=-5.0000
+  #8: Always Defect        score=-7.8571
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=5
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-5.00, 5.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(-5.00, 5.00)
+  Match 05: Always Cooperate vs Grudger | scores=(21.00, -21.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-17.00, 17.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-3.00, 3.00)
+  Match 10: Always Defect vs Random | scores=(-1.00, 1.00)
+  Match 11: Always Defect vs Grudger | scores=(-13.00, 13.00)
+  Match 12: Always Defect vs Pavlov | scores=(-15.00, 15.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-19.00, 19.00)
+  Match 15: Tit for Tat vs Random | scores=(-9.00, 9.00)
+  Match 16: Tit for Tat vs Grudger | scores=(1.00, -1.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-13.00, 13.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-3.00, 3.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-7.00, 7.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 23: Random vs Grudger | scores=(1.00, -1.00)
+  Match 24: Random vs Pavlov | scores=(3.00, -3.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-13.00, 13.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-9.00, 9.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=9.2857
+  #2: Pavlov               score=6.4286
+  #3: Random               score=3.0000
+  #4: Tit for Two Tats     score=0.4286
+  #5: Always Cooperate     score=-1.8571
+  #6: Tit for Tat          score=-2.7143
+  #7: Grudger              score=-3.5714
+  #8: Always Defect        score=-11.0000
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=6
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-13.00, 13.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(-3.00, 3.00)
+  Match 05: Always Cooperate vs Grudger | scores=(-1.00, 1.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-5.00, 5.00)
+  Match 10: Always Defect vs Random | scores=(7.00, -7.00)
+  Match 11: Always Defect vs Grudger | scores=(-21.00, 21.00)
+  Match 12: Always Defect vs Pavlov | scores=(-11.00, 11.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 15: Tit for Tat vs Random | scores=(1.00, -1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-11.00, 11.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-13.00, 13.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 19: Tit for Two Tats vs Random | scores=(1.00, -1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-13.00, 13.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-13.00, 13.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 23: Random vs Grudger | scores=(1.00, -1.00)
+  Match 24: Random vs Pavlov | scores=(-3.00, 3.00)
+  Match 25: Random vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 26: Grudger vs Pavlov | scores=(-15.00, 15.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-11.00, 11.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=13.2857
+  #2: Pavlov               score=7.5714
+  #3: Grudger              score=3.0000
+  #4: Tit for Two Tats     score=-1.5714
+  #5: Random               score=-2.4286
+  #6: Tit for Tat          score=-3.8571
+  #7: Always Cooperate     score=-6.4286
+  #8: Always Defect        score=-9.5714
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=7
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(13.00, -13.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-5.00, 5.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 04: Always Cooperate vs Random | scores=(5.00, -5.00)
+  Match 05: Always Cooperate vs Grudger | scores=(19.00, -19.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-17.00, 17.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-15.00, 15.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-5.00, 5.00)
+  Match 10: Always Defect vs Random | scores=(7.00, -7.00)
+  Match 11: Always Defect vs Grudger | scores=(-17.00, 17.00)
+  Match 12: Always Defect vs Pavlov | scores=(-7.00, 7.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-15.00, 15.00)
+  Match 15: Tit for Tat vs Random | scores=(-1.00, 1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-19.00, 19.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(5.00, -5.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-1.00, 1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-7.00, 7.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(3.00, -3.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(3.00, -3.00)
+  Match 24: Random vs Pavlov | scores=(13.00, -13.00)
+  Match 25: Random vs Adaptive TFT | scores=(-3.00, 3.00)
+  Match 26: Grudger vs Pavlov | scores=(-19.00, 19.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-13.00, 13.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=11.2857
+  #2: Tit for Two Tats     score=1.8571
+  #3: Pavlov               score=1.2857
+  #4: Random               score=0.4286
+  #5: Always Cooperate     score=-1.0000
+  #6: Grudger              score=-1.0000
+  #7: Tit for Tat          score=-3.8571
+  #8: Always Defect        score=-9.0000
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=8
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(13.00, -13.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 04: Always Cooperate vs Random | scores=(-1.00, 1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(17.00, -17.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-15.00, 15.00)
+  Match 10: Always Defect vs Random | scores=(-1.00, 1.00)
+  Match 11: Always Defect vs Grudger | scores=(-19.00, 19.00)
+  Match 12: Always Defect vs Pavlov | scores=(-13.00, 13.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 15: Tit for Tat vs Random | scores=(-1.00, 1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-9.00, 9.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-11.00, 11.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-7.00, 7.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-17.00, 17.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-13.00, 13.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(-3.00, 3.00)
+  Match 24: Random vs Pavlov | scores=(5.00, -5.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-11.00, 11.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(3.00, -3.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=10.1429
+  #2: Pavlov               score=8.4286
+  #3: Random               score=1.5714
+  #4: Grudger              score=1.5714
+  #5: Tit for Two Tats     score=-1.0000
+  #6: Always Cooperate     score=-3.8571
+  #7: Tit for Tat          score=-3.8571
+  #8: Always Defect        score=-13.0000
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=9
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(11.00, -11.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-1.00, 1.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(1.00, -1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(7.00, -7.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-7.00, 7.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-7.00, 7.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-3.00, 3.00)
+  Match 10: Always Defect vs Random | scores=(-3.00, 3.00)
+  Match 11: Always Defect vs Grudger | scores=(-11.00, 11.00)
+  Match 12: Always Defect vs Pavlov | scores=(-11.00, 11.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 15: Tit for Tat vs Random | scores=(-3.00, 3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-13.00, 13.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(3.00, -3.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-5.00, 5.00)
+  Match 19: Tit for Two Tats vs Random | scores=(11.00, -11.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-7.00, 7.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(3.00, -3.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(5.00, -5.00)
+  Match 24: Random vs Pavlov | scores=(3.00, -3.00)
+  Match 25: Random vs Adaptive TFT | scores=(7.00, -7.00)
+  Match 26: Grudger vs Pavlov | scores=(-3.00, 3.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-7.00, 7.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=7.8571
+  #2: Tit for Two Tats     score=3.5714
+  #3: Random               score=1.2857
+  #4: Grudger              score=1.0000
+  #5: Pavlov               score=0.7143
+  #6: Always Cooperate     score=-3.0000
+  #7: Tit for Tat          score=-3.2857
+  #8: Always Defect        score=-8.1429
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=10
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-13.00, 13.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 04: Always Cooperate vs Random | scores=(-3.00, 3.00)
+  Match 05: Always Cooperate vs Grudger | scores=(17.00, -17.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-21.00, 21.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 10: Always Defect vs Random | scores=(-3.00, 3.00)
+  Match 11: Always Defect vs Grudger | scores=(-15.00, 15.00)
+  Match 12: Always Defect vs Pavlov | scores=(-23.00, 23.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 15: Tit for Tat vs Random | scores=(-3.00, 3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-3.00, 3.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-9.00, 9.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-1.00, 1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-15.00, 15.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 23: Random vs Grudger | scores=(-5.00, 5.00)
+  Match 24: Random vs Pavlov | scores=(-1.00, 1.00)
+  Match 25: Random vs Adaptive TFT | scores=(5.00, -5.00)
+  Match 26: Grudger vs Pavlov | scores=(-17.00, 17.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-21.00, 21.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=11.5714
+  #2: Pavlov               score=7.5714
+  #3: Random               score=1.2857
+  #4: Tit for Two Tats     score=-0.4286
+  #5: Tit for Tat          score=-0.7143
+  #6: Always Cooperate     score=-1.8571
+  #7: Grudger              score=-2.7143
+  #8: Always Defect        score=-14.7143
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=11
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(11.00, -11.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-5.00, 5.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(11.00, -11.00)
+  Match 05: Always Cooperate vs Grudger | scores=(-1.00, 1.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-15.00, 15.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-1.00, 1.00)
+  Match 10: Always Defect vs Random | scores=(-7.00, 7.00)
+  Match 11: Always Defect vs Grudger | scores=(-13.00, 13.00)
+  Match 12: Always Defect vs Pavlov | scores=(-13.00, 13.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 15: Tit for Tat vs Random | scores=(-3.00, 3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-9.00, 9.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-9.00, 9.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 19: Tit for Two Tats vs Random | scores=(3.00, -3.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-5.00, 5.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-5.00, 5.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(-3.00, 3.00)
+  Match 24: Random vs Pavlov | scores=(-5.00, 5.00)
+  Match 25: Random vs Adaptive TFT | scores=(1.00, -1.00)
+  Match 26: Grudger vs Pavlov | scores=(-11.00, 11.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-5.00, 5.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(5.00, -5.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=9.5714
+  #2: Pavlov               score=8.7143
+  #3: Grudger              score=2.1429
+  #4: Tit for Two Tats     score=1.8571
+  #5: Random               score=-1.5714
+  #6: Always Cooperate     score=-4.7143
+  #7: Tit for Tat          score=-5.2857
+  #8: Always Defect        score=-10.7143
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=12
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(9.00, -9.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-3.00, 3.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-21.00, 21.00)
+  Match 04: Always Cooperate vs Random | scores=(-9.00, 9.00)
+  Match 05: Always Cooperate vs Grudger | scores=(-19.00, 19.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-17.00, 17.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-15.00, 15.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 10: Always Defect vs Random | scores=(-3.00, 3.00)
+  Match 11: Always Defect vs Grudger | scores=(-21.00, 21.00)
+  Match 12: Always Defect vs Pavlov | scores=(-5.00, 5.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-1.00, 1.00)
+  Match 15: Tit for Tat vs Random | scores=(5.00, -5.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-7.00, 7.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-11.00, 11.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-23.00, 23.00)
+  Match 19: Tit for Two Tats vs Random | scores=(3.00, -3.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-7.00, 7.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-13.00, 13.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 23: Random vs Grudger | scores=(-5.00, 5.00)
+  Match 24: Random vs Pavlov | scores=(3.00, -3.00)
+  Match 25: Random vs Adaptive TFT | scores=(1.00, -1.00)
+  Match 26: Grudger vs Pavlov | scores=(-15.00, 15.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(11.00, -11.00)
+Step 4/4: Final rankings
+  #1: Pavlov               score=9.8571
+  #2: Adaptive TFT         score=9.5714
+  #3: Grudger              score=4.7143
+  #4: Tit for Two Tats     score=1.0000
+  #5: Random               score=0.4286
+  #6: Tit for Tat          score=-2.7143
+  #7: Always Cooperate     score=-11.2857
+  #8: Always Defect        score=-11.5714
+Winner: Pavlov
+==========================================================================================
+Run seed=13
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(23.00, -23.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 04: Always Cooperate vs Random | scores=(-3.00, 3.00)
+  Match 05: Always Cooperate vs Grudger | scores=(-7.00, 7.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(1.00, -1.00)
+  Match 10: Always Defect vs Random | scores=(3.00, -3.00)
+  Match 11: Always Defect vs Grudger | scores=(-15.00, 15.00)
+  Match 12: Always Defect vs Pavlov | scores=(-3.00, 3.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-3.00, 3.00)
+  Match 15: Tit for Tat vs Random | scores=(3.00, -3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-9.00, 9.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-15.00, 15.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 19: Tit for Two Tats vs Random | scores=(1.00, -1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-15.00, 15.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-19.00, 19.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 23: Random vs Grudger | scores=(-7.00, 7.00)
+  Match 24: Random vs Pavlov | scores=(1.00, -1.00)
+  Match 25: Random vs Adaptive TFT | scores=(-3.00, 3.00)
+  Match 26: Grudger vs Pavlov | scores=(-23.00, 23.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-19.00, 19.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=13.2857
+  #2: Pavlov               score=7.5714
+  #3: Grudger              score=3.0000
+  #4: Random               score=-1.8571
+  #5: Tit for Tat          score=-2.7143
+  #6: Tit for Two Tats     score=-4.4286
+  #7: Always Cooperate     score=-5.2857
+  #8: Always Defect        score=-9.5714
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=14
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(19.00, -19.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-3.00, 3.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-25.00, 25.00)
+  Match 04: Always Cooperate vs Random | scores=(-5.00, 5.00)
+  Match 05: Always Cooperate vs Grudger | scores=(19.00, -19.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-9.00, 9.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 10: Always Defect vs Random | scores=(-5.00, 5.00)
+  Match 11: Always Defect vs Grudger | scores=(-17.00, 17.00)
+  Match 12: Always Defect vs Pavlov | scores=(-11.00, 11.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-5.00, 5.00)
+  Match 15: Tit for Tat vs Random | scores=(1.00, -1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-9.00, 9.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-21.00, 21.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 19: Tit for Two Tats vs Random | scores=(1.00, -1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-15.00, 15.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(3.00, -3.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 23: Random vs Grudger | scores=(-1.00, 1.00)
+  Match 24: Random vs Pavlov | scores=(-3.00, 3.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-15.00, 15.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-17.00, 17.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=13.2857
+  #2: Pavlov               score=5.5714
+  #3: Tit for Two Tats     score=1.5714
+  #4: Random               score=0.4286
+  #5: Grudger              score=-0.4286
+  #6: Always Cooperate     score=-3.2857
+  #7: Tit for Tat          score=-5.2857
+  #8: Always Defect        score=-11.8571
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=15
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(13.00, -13.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(-3.00, 3.00)
+  Match 05: Always Cooperate vs Grudger | scores=(-17.00, 17.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 10: Always Defect vs Random | scores=(-1.00, 1.00)
+  Match 11: Always Defect vs Grudger | scores=(-21.00, 21.00)
+  Match 12: Always Defect vs Pavlov | scores=(-9.00, 9.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(3.00, -3.00)
+  Match 15: Tit for Tat vs Random | scores=(-3.00, 3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-11.00, 11.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-1.00, 1.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 19: Tit for Two Tats vs Random | scores=(7.00, -7.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-13.00, 13.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(13.00, -13.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(-1.00, 1.00)
+  Match 24: Random vs Pavlov | scores=(-7.00, 7.00)
+  Match 25: Random vs Adaptive TFT | scores=(-5.00, 5.00)
+  Match 26: Grudger vs Pavlov | scores=(-15.00, 15.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-21.00, 21.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=13.0000
+  #2: Grudger              score=5.5714
+  #3: Tit for Two Tats     score=2.7143
+  #4: Pavlov               score=1.0000
+  #5: Tit for Tat          score=-0.4286
+  #6: Random               score=-1.8571
+  #7: Always Cooperate     score=-8.7143
+  #8: Always Defect        score=-11.2857
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=16
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-7.00, 7.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(3.00, -3.00)
+  Match 05: Always Cooperate vs Grudger | scores=(13.00, -13.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-13.00, 13.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-7.00, 7.00)
+  Match 10: Always Defect vs Random | scores=(-5.00, 5.00)
+  Match 11: Always Defect vs Grudger | scores=(-13.00, 13.00)
+  Match 12: Always Defect vs Pavlov | scores=(-13.00, 13.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-23.00, 23.00)
+  Match 15: Tit for Tat vs Random | scores=(7.00, -7.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-19.00, 19.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(3.00, -3.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(5.00, -5.00)
+  Match 19: Tit for Two Tats vs Random | scores=(7.00, -7.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-15.00, 15.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-5.00, 5.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(-3.00, 3.00)
+  Match 24: Random vs Pavlov | scores=(5.00, -5.00)
+  Match 25: Random vs Adaptive TFT | scores=(1.00, -1.00)
+  Match 26: Grudger vs Pavlov | scores=(-3.00, 3.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-9.00, 9.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=7.8571
+  #2: Grudger              score=3.2857
+  #3: Tit for Two Tats     score=2.7143
+  #4: Pavlov               score=2.4286
+  #5: Tit for Tat          score=-1.0000
+  #6: Random               score=-1.2857
+  #7: Always Cooperate     score=-3.2857
+  #8: Always Defect        score=-10.7143
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=17
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-15.00, 15.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-23.00, 23.00)
+  Match 04: Always Cooperate vs Random | scores=(-9.00, 9.00)
+  Match 05: Always Cooperate vs Grudger | scores=(-17.00, 17.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-15.00, 15.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-7.00, 7.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(1.00, -1.00)
+  Match 10: Always Defect vs Random | scores=(9.00, -9.00)
+  Match 11: Always Defect vs Grudger | scores=(-15.00, 15.00)
+  Match 12: Always Defect vs Pavlov | scores=(-11.00, 11.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-21.00, 21.00)
+  Match 15: Tit for Tat vs Random | scores=(3.00, -3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-13.00, 13.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(3.00, -3.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 19: Tit for Two Tats vs Random | scores=(7.00, -7.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-5.00, 5.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-5.00, 5.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 23: Random vs Grudger | scores=(-3.00, 3.00)
+  Match 24: Random vs Pavlov | scores=(1.00, -1.00)
+  Match 25: Random vs Adaptive TFT | scores=(9.00, -9.00)
+  Match 26: Grudger vs Pavlov | scores=(-1.00, 1.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-11.00, 11.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=10.1429
+  #2: Grudger              score=5.8571
+  #3: Tit for Two Tats     score=3.2857
+  #4: Pavlov               score=2.4286
+  #5: Random               score=-0.4286
+  #6: Tit for Tat          score=-3.5714
+  #7: Always Defect        score=-7.0000
+  #8: Always Cooperate     score=-10.7143
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=18
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(23.00, -23.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-21.00, 21.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-15.00, 15.00)
+  Match 04: Always Cooperate vs Random | scores=(-1.00, 1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(17.00, -17.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-17.00, 17.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-23.00, 23.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-5.00, 5.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-15.00, 15.00)
+  Match 10: Always Defect vs Random | scores=(-3.00, 3.00)
+  Match 11: Always Defect vs Grudger | scores=(-15.00, 15.00)
+  Match 12: Always Defect vs Pavlov | scores=(-11.00, 11.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-1.00, 1.00)
+  Match 15: Tit for Tat vs Random | scores=(3.00, -3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-11.00, 11.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-11.00, 11.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 19: Tit for Two Tats vs Random | scores=(3.00, -3.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-9.00, 9.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 23: Random vs Grudger | scores=(-1.00, 1.00)
+  Match 24: Random vs Pavlov | scores=(-1.00, 1.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-15.00, 15.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(19.00, -19.00)
+Step 4/4: Final rankings
+  #1: Pavlov               score=11.8571
+  #2: Adaptive TFT         score=5.8571
+  #3: Tit for Tat          score=0.7143
+  #4: Tit for Two Tats     score=0.4286
+  #5: Random               score=-0.7143
+  #6: Grudger              score=-1.2857
+  #7: Always Cooperate     score=-5.2857
+  #8: Always Defect        score=-11.5714
+Winner: Pavlov
+==========================================================================================
+Run seed=19
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(19.00, -19.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-5.00, 5.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-19.00, 19.00)
+  Match 04: Always Cooperate vs Random | scores=(-5.00, 5.00)
+  Match 05: Always Cooperate vs Grudger | scores=(19.00, -19.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-15.00, 15.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 10: Always Defect vs Random | scores=(5.00, -5.00)
+  Match 11: Always Defect vs Grudger | scores=(-13.00, 13.00)
+  Match 12: Always Defect vs Pavlov | scores=(-19.00, 19.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-21.00, 21.00)
+  Match 15: Tit for Tat vs Random | scores=(-11.00, 11.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-15.00, 15.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(17.00, -17.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-1.00, 1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-9.00, 9.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 23: Random vs Grudger | scores=(15.00, -15.00)
+  Match 24: Random vs Pavlov | scores=(15.00, -15.00)
+  Match 25: Random vs Adaptive TFT | scores=(-3.00, 3.00)
+  Match 26: Grudger vs Pavlov | scores=(-11.00, 11.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-19.00, 19.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=13.8571
+  #2: Random               score=5.5714
+  #3: Tit for Two Tats     score=2.1429
+  #4: Pavlov               score=-0.4286
+  #5: Always Cooperate     score=-2.1429
+  #6: Grudger              score=-2.4286
+  #7: Tit for Tat          score=-3.8571
+  #8: Always Defect        score=-12.7143
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=20
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(19.00, -19.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-9.00, 9.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 04: Always Cooperate vs Random | scores=(3.00, -3.00)
+  Match 05: Always Cooperate vs Grudger | scores=(21.00, -21.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-5.00, 5.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-21.00, 21.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(1.00, -1.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-3.00, 3.00)
+  Match 10: Always Defect vs Random | scores=(7.00, -7.00)
+  Match 11: Always Defect vs Grudger | scores=(-13.00, 13.00)
+  Match 12: Always Defect vs Pavlov | scores=(-15.00, 15.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 15: Tit for Tat vs Random | scores=(5.00, -5.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-5.00, 5.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-11.00, 11.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 19: Tit for Two Tats vs Random | scores=(7.00, -7.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-7.00, 7.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-15.00, 15.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-23.00, 23.00)
+  Match 23: Random vs Grudger | scores=(3.00, -3.00)
+  Match 24: Random vs Pavlov | scores=(-3.00, 3.00)
+  Match 25: Random vs Adaptive TFT | scores=(1.00, -1.00)
+  Match 26: Grudger vs Pavlov | scores=(-23.00, 23.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-5.00, 5.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=12.7143
+  #2: Pavlov               score=9.5714
+  #3: Always Cooperate     score=-0.4286
+  #4: Tit for Two Tats     score=-1.0000
+  #5: Random               score=-3.0000
+  #6: Grudger              score=-4.4286
+  #7: Tit for Tat          score=-5.0000
+  #8: Always Defect        score=-8.4286
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=21
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-17.00, 17.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 04: Always Cooperate vs Random | scores=(-5.00, 5.00)
+  Match 05: Always Cooperate vs Grudger | scores=(5.00, -5.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-1.00, 1.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-21.00, 21.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-17.00, 17.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-7.00, 7.00)
+  Match 10: Always Defect vs Random | scores=(11.00, -11.00)
+  Match 11: Always Defect vs Grudger | scores=(-15.00, 15.00)
+  Match 12: Always Defect vs Pavlov | scores=(-23.00, 23.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 15: Tit for Tat vs Random | scores=(-3.00, 3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-11.00, 11.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-21.00, 21.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 19: Tit for Two Tats vs Random | scores=(9.00, -9.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-9.00, 9.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 23: Random vs Grudger | scores=(-1.00, 1.00)
+  Match 24: Random vs Pavlov | scores=(5.00, -5.00)
+  Match 25: Random vs Adaptive TFT | scores=(1.00, -1.00)
+  Match 26: Grudger vs Pavlov | scores=(-13.00, 13.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-13.00, 13.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=13.5714
+  #2: Pavlov               score=7.0000
+  #3: Grudger              score=0.7143
+  #4: Tit for Two Tats     score=0.4286
+  #5: Random               score=-1.0000
+  #6: Tit for Tat          score=-3.8571
+  #7: Always Cooperate     score=-5.0000
+  #8: Always Defect        score=-11.8571
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=22
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(17.00, -17.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-15.00, 15.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-5.00, 5.00)
+  Match 04: Always Cooperate vs Random | scores=(5.00, -5.00)
+  Match 05: Always Cooperate vs Grudger | scores=(-5.00, 5.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-9.00, 9.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-5.00, 5.00)
+  Match 10: Always Defect vs Random | scores=(-3.00, 3.00)
+  Match 11: Always Defect vs Grudger | scores=(-15.00, 15.00)
+  Match 12: Always Defect vs Pavlov | scores=(-11.00, 11.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 15: Tit for Tat vs Random | scores=(-7.00, 7.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-17.00, 17.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-11.00, 11.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(5.00, -5.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-1.00, 1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-21.00, 21.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-7.00, 7.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 23: Random vs Grudger | scores=(1.00, -1.00)
+  Match 24: Random vs Pavlov | scores=(-3.00, 3.00)
+  Match 25: Random vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 26: Grudger vs Pavlov | scores=(-1.00, 1.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-3.00, 3.00)
+Step 4/4: Final rankings
+  #1: Grudger              score=6.7143
+  #2: Adaptive TFT         score=6.7143
+  #3: Pavlov               score=6.1429
+  #4: Tit for Two Tats     score=-0.4286
+  #5: Random               score=-0.4286
+  #6: Tit for Tat          score=-3.2857
+  #7: Always Cooperate     score=-4.4286
+  #8: Always Defect        score=-11.0000
+Winner: Grudger
+==========================================================================================
+Run seed=23
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(15.00, -15.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-19.00, 19.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(-1.00, 1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(9.00, -9.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-7.00, 7.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 10: Always Defect vs Random | scores=(-1.00, 1.00)
+  Match 11: Always Defect vs Grudger | scores=(3.00, -3.00)
+  Match 12: Always Defect vs Pavlov | scores=(1.00, -1.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 15: Tit for Tat vs Random | scores=(1.00, -1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-9.00, 9.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(9.00, -9.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(5.00, -5.00)
+  Match 19: Tit for Two Tats vs Random | scores=(1.00, -1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-7.00, 7.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-1.00, 1.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 23: Random vs Grudger | scores=(-1.00, 1.00)
+  Match 24: Random vs Pavlov | scores=(5.00, -5.00)
+  Match 25: Random vs Adaptive TFT | scores=(5.00, -5.00)
+  Match 26: Grudger vs Pavlov | scores=(-9.00, 9.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-19.00, 19.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=9.0000
+  #2: Tit for Tat          score=2.7143
+  #3: Tit for Two Tats     score=2.7143
+  #4: Random               score=1.2857
+  #5: Pavlov               score=-2.1429
+  #6: Grudger              score=-2.4286
+  #7: Always Cooperate     score=-4.7143
+  #8: Always Defect        score=-6.4286
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=24
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(19.00, -19.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-17.00, 17.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 04: Always Cooperate vs Random | scores=(1.00, -1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(15.00, -15.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-3.00, 3.00)
+  Match 10: Always Defect vs Random | scores=(-3.00, 3.00)
+  Match 11: Always Defect vs Grudger | scores=(-11.00, 11.00)
+  Match 12: Always Defect vs Pavlov | scores=(-15.00, 15.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 15: Tit for Tat vs Random | scores=(-3.00, 3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-9.00, 9.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-17.00, 17.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 19: Tit for Two Tats vs Random | scores=(1.00, -1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-5.00, 5.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 23: Random vs Grudger | scores=(-1.00, 1.00)
+  Match 24: Random vs Pavlov | scores=(-9.00, 9.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-11.00, 11.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(9.00, -9.00)
+Step 4/4: Final rankings
+  #1: Pavlov               score=11.2857
+  #2: Adaptive TFT         score=7.2857
+  #3: Tit for Two Tats     score=0.1429
+  #4: Random               score=-1.0000
+  #5: Grudger              score=-1.0000
+  #6: Tit for Tat          score=-2.7143
+  #7: Always Cooperate     score=-3.0000
+  #8: Always Defect        score=-11.0000
+Winner: Pavlov
+==========================================================================================
+Run seed=25
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(13.00, -13.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-13.00, 13.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 04: Always Cooperate vs Random | scores=(1.00, -1.00)
+  Match 05: Always Cooperate vs Grudger | scores=(15.00, -15.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-9.00, 9.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-9.00, 9.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-15.00, 15.00)
+  Match 10: Always Defect vs Random | scores=(1.00, -1.00)
+  Match 11: Always Defect vs Grudger | scores=(-17.00, 17.00)
+  Match 12: Always Defect vs Pavlov | scores=(-15.00, 15.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-21.00, 21.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 15: Tit for Tat vs Random | scores=(-5.00, 5.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-17.00, 17.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(5.00, -5.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(1.00, -1.00)
+  Match 19: Tit for Two Tats vs Random | scores=(7.00, -7.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-17.00, 17.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(5.00, -5.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-21.00, 21.00)
+  Match 23: Random vs Grudger | scores=(-1.00, 1.00)
+  Match 24: Random vs Pavlov | scores=(-1.00, 1.00)
+  Match 25: Random vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 26: Grudger vs Pavlov | scores=(-7.00, 7.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(-9.00, 9.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=11.8571
+  #2: Grudger              score=3.2857
+  #3: Tit for Two Tats     score=1.8571
+  #4: Pavlov               score=1.8571
+  #5: Tit for Tat          score=-0.7143
+  #6: Random               score=-1.8571
+  #7: Always Cooperate     score=-3.5714
+  #8: Always Defect        score=-12.7143
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=26
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(13.00, -13.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-1.00, 1.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 04: Always Cooperate vs Random | scores=(5.00, -5.00)
+  Match 05: Always Cooperate vs Grudger | scores=(11.00, -11.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-7.00, 7.00)
+  Match 10: Always Defect vs Random | scores=(7.00, -7.00)
+  Match 11: Always Defect vs Grudger | scores=(-17.00, 17.00)
+  Match 12: Always Defect vs Pavlov | scores=(-7.00, 7.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-9.00, 9.00)
+  Match 15: Tit for Tat vs Random | scores=(-11.00, 11.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-19.00, 19.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-7.00, 7.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(9.00, -9.00)
+  Match 19: Tit for Two Tats vs Random | scores=(7.00, -7.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-5.00, 5.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 23: Random vs Grudger | scores=(1.00, -1.00)
+  Match 24: Random vs Pavlov | scores=(-7.00, 7.00)
+  Match 25: Random vs Adaptive TFT | scores=(9.00, -9.00)
+  Match 26: Grudger vs Pavlov | scores=(-15.00, 15.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(5.00, -5.00)
+Step 4/4: Final rankings
+  #1: Pavlov               score=8.4286
+  #2: Adaptive TFT         score=4.7143
+  #3: Tit for Two Tats     score=0.7143
+  #4: Grudger              score=0.7143
+  #5: Random               score=-0.7143
+  #6: Always Cooperate     score=-1.2857
+  #7: Tit for Tat          score=-3.5714
+  #8: Always Defect        score=-9.0000
+Winner: Pavlov
+==========================================================================================
+Run seed=27
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(13.00, -13.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-7.00, 7.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-17.00, 17.00)
+  Match 04: Always Cooperate vs Random | scores=(3.00, -3.00)
+  Match 05: Always Cooperate vs Grudger | scores=(9.00, -9.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-1.00, 1.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-17.00, 17.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-15.00, 15.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-3.00, 3.00)
+  Match 10: Always Defect vs Random | scores=(5.00, -5.00)
+  Match 11: Always Defect vs Grudger | scores=(-17.00, 17.00)
+  Match 12: Always Defect vs Pavlov | scores=(-11.00, 11.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-5.00, 5.00)
+  Match 15: Tit for Tat vs Random | scores=(3.00, -3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-17.00, 17.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(11.00, -11.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 19: Tit for Two Tats vs Random | scores=(1.00, -1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-3.00, 3.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-11.00, 11.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 23: Random vs Grudger | scores=(1.00, -1.00)
+  Match 24: Random vs Pavlov | scores=(1.00, -1.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-5.00, 5.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(7.00, -7.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=7.5714
+  #2: Pavlov               score=3.2857
+  #3: Tit for Tat          score=1.0000
+  #4: Tit for Two Tats     score=0.7143
+  #5: Grudger              score=0.4286
+  #6: Random               score=-1.5714
+  #7: Always Cooperate     score=-2.4286
+  #8: Always Defect        score=-9.0000
+Winner: Adaptive TFT
+==========================================================================================
+Run seed=28
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(17.00, -17.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-13.00, 13.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 04: Always Cooperate vs Random | scores=(-7.00, 7.00)
+  Match 05: Always Cooperate vs Grudger | scores=(-17.00, 17.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-19.00, 19.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-11.00, 11.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-3.00, 3.00)
+  Match 10: Always Defect vs Random | scores=(-1.00, 1.00)
+  Match 11: Always Defect vs Grudger | scores=(-19.00, 19.00)
+  Match 12: Always Defect vs Pavlov | scores=(-7.00, 7.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-25.00, 25.00)
+  Match 15: Tit for Tat vs Random | scores=(-3.00, 3.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-9.00, 9.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-25.00, 25.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(9.00, -9.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-1.00, 1.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-11.00, 11.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-1.00, 1.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 23: Random vs Grudger | scores=(3.00, -3.00)
+  Match 24: Random vs Pavlov | scores=(1.00, -1.00)
+  Match 25: Random vs Adaptive TFT | scores=(-1.00, 1.00)
+  Match 26: Grudger vs Pavlov | scores=(-7.00, 7.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-13.00, 13.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(7.00, -7.00)
+Step 4/4: Final rankings
+  #1: Pavlov               score=8.4286
+  #2: Adaptive TFT         score=5.5714
+  #3: Grudger              score=4.7143
+  #4: Tit for Two Tats     score=2.7143
+  #5: Random               score=2.1429
+  #6: Tit for Tat          score=-4.1429
+  #7: Always Cooperate     score=-9.0000
+  #8: Always Defect        score=-10.4286
+Winner: Pavlov
+==========================================================================================
+Run seed=29
+Step 1/4: Random generators seeded
+Step 2/4: Tournament completed
+Step 3/4: Match-by-match outcomes
+  Match 01: Always Cooperate vs Always Defect | scores=(21.00, -21.00)
+  Match 02: Always Cooperate vs Tit for Tat | scores=(-7.00, 7.00)
+  Match 03: Always Cooperate vs Tit for Two Tats | scores=(-15.00, 15.00)
+  Match 04: Always Cooperate vs Random | scores=(-5.00, 5.00)
+  Match 05: Always Cooperate vs Grudger | scores=(11.00, -11.00)
+  Match 06: Always Cooperate vs Pavlov | scores=(-13.00, 13.00)
+  Match 07: Always Cooperate vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 08: Always Defect vs Tit for Tat | scores=(-13.00, 13.00)
+  Match 09: Always Defect vs Tit for Two Tats | scores=(-11.00, 11.00)
+  Match 10: Always Defect vs Random | scores=(5.00, -5.00)
+  Match 11: Always Defect vs Grudger | scores=(-19.00, 19.00)
+  Match 12: Always Defect vs Pavlov | scores=(-7.00, 7.00)
+  Match 13: Always Defect vs Adaptive TFT | scores=(-11.00, 11.00)
+  Match 14: Tit for Tat vs Tit for Two Tats | scores=(-13.00, 13.00)
+  Match 15: Tit for Tat vs Random | scores=(-1.00, 1.00)
+  Match 16: Tit for Tat vs Grudger | scores=(-9.00, 9.00)
+  Match 17: Tit for Tat vs Pavlov | scores=(-15.00, 15.00)
+  Match 18: Tit for Tat vs Adaptive TFT | scores=(-15.00, 15.00)
+  Match 19: Tit for Two Tats vs Random | scores=(-13.00, 13.00)
+  Match 20: Tit for Two Tats vs Grudger | scores=(-9.00, 9.00)
+  Match 21: Tit for Two Tats vs Pavlov | scores=(-5.00, 5.00)
+  Match 22: Tit for Two Tats vs Adaptive TFT | scores=(-7.00, 7.00)
+  Match 23: Random vs Grudger | scores=(1.00, -1.00)
+  Match 24: Random vs Pavlov | scores=(-7.00, 7.00)
+  Match 25: Random vs Adaptive TFT | scores=(-3.00, 3.00)
+  Match 26: Grudger vs Pavlov | scores=(-7.00, 7.00)
+  Match 27: Grudger vs Adaptive TFT | scores=(-9.00, 9.00)
+  Match 28: Pavlov vs Adaptive TFT | scores=(1.00, -1.00)
+Step 4/4: Final rankings
+  #1: Adaptive TFT         score=8.4286
+  #2: Pavlov               score=7.8571
+  #3: Grudger              score=1.2857
+  #4: Tit for Two Tats     score=0.7143
+  #5: Random               score=0.7143
+  #6: Always Cooperate     score=-3.2857
+  #7: Tit for Tat          score=-4.7143
+  #8: Always Defect        score=-11.0000
+Winner: Adaptive TFT
+
+##########################################################################################
+Aggregate multi-seed summary
+##########################################################################################
+Total runs: 30
+
+Winner by seed:
+  seed=   0 -> winner=Adaptive TFT
+  seed=   1 -> winner=Pavlov
+  seed=   2 -> winner=Adaptive TFT
+  seed=   3 -> winner=Adaptive TFT
+  seed=   4 -> winner=Adaptive TFT
+  seed=   5 -> winner=Adaptive TFT
+  seed=   6 -> winner=Adaptive TFT
+  seed=   7 -> winner=Adaptive TFT
+  seed=   8 -> winner=Adaptive TFT
+  seed=   9 -> winner=Adaptive TFT
+  seed=  10 -> winner=Adaptive TFT
+  seed=  11 -> winner=Adaptive TFT
+  seed=  12 -> winner=Pavlov
+  seed=  13 -> winner=Adaptive TFT
+  seed=  14 -> winner=Adaptive TFT
+  seed=  15 -> winner=Adaptive TFT
+  seed=  16 -> winner=Adaptive TFT
+  seed=  17 -> winner=Adaptive TFT
+  seed=  18 -> winner=Pavlov
+  seed=  19 -> winner=Adaptive TFT
+  seed=  20 -> winner=Adaptive TFT
+  seed=  21 -> winner=Adaptive TFT
+  seed=  22 -> winner=Grudger
+  seed=  23 -> winner=Adaptive TFT
+  seed=  24 -> winner=Pavlov
+  seed=  25 -> winner=Adaptive TFT
+  seed=  26 -> winner=Pavlov
+  seed=  27 -> winner=Adaptive TFT
+  seed=  28 -> winner=Pavlov
+  seed=  29 -> winner=Adaptive TFT
+
+Per-strategy aggregate metrics:
+  (win count / win rate / average rank / average score +/- std)
+  Adaptive TFT         wins= 23 win_rate=76.67% avg_rank=1.233 avg_score=9.6952 +/- 2.5943
+  Pavlov               wins=  6 win_rate=20.00% avg_rank=2.433 avg_score=5.8952 +/- 3.6168
+  Grudger              wins=  1 win_rate=3.33% avg_rank=4.000 avg_score=1.1714 +/- 2.8242
+  Tit for Two Tats     wins=  0 win_rate=0.00% avg_rank=3.733 avg_score=0.8095 +/- 1.9648
+  Random               wins=  0 win_rate=0.00% avg_rank=4.467 avg_score=-0.0095 +/- 1.7686
+  Tit for Tat          wins=  0 win_rate=0.00% avg_rank=5.767 avg_score=-2.6095 +/- 2.0477
+  Always Cooperate     wins=  0 win_rate=0.00% avg_rank=6.400 avg_score=-4.3524 +/- 2.6029
+  Always Defect        wins=  0 win_rate=0.00% avg_rank=7.967 avg_score=-10.6000 +/- 1.8701
+
+Evolution winner by seed (highest final population share):
+  seed=   0 -> evolution_winner=Pavlov
+  seed=   1 -> evolution_winner=Tit for Two Tats
+  seed=   2 -> evolution_winner=Pavlov
+  seed=   3 -> evolution_winner=Adaptive TFT
+  seed=   4 -> evolution_winner=Grudger
+  seed=   5 -> evolution_winner=Always Cooperate
+  seed=   6 -> evolution_winner=Random
+  seed=   7 -> evolution_winner=Pavlov
+  seed=   8 -> evolution_winner=Always Defect
+  seed=   9 -> evolution_winner=Tit for Tat
+  seed=  10 -> evolution_winner=Adaptive TFT
+  seed=  11 -> evolution_winner=Grudger
+  seed=  12 -> evolution_winner=Tit for Two Tats
+  seed=  13 -> evolution_winner=Always Cooperate
+  seed=  14 -> evolution_winner=Grudger
+  seed=  15 -> evolution_winner=Tit for Two Tats
+  seed=  16 -> evolution_winner=Pavlov
+  seed=  17 -> evolution_winner=Tit for Tat
+  seed=  18 -> evolution_winner=Tit for Two Tats
+  seed=  19 -> evolution_winner=Pavlov
+  seed=  20 -> evolution_winner=Adaptive TFT
+  seed=  21 -> evolution_winner=Always Cooperate
+  seed=  22 -> evolution_winner=Always Defect
+  seed=  23 -> evolution_winner=Always Cooperate
+  seed=  24 -> evolution_winner=Adaptive TFT
+  seed=  25 -> evolution_winner=Pavlov
+  seed=  26 -> evolution_winner=Tit for Tat
+  seed=  27 -> evolution_winner=Always Cooperate
+  seed=  28 -> evolution_winner=Tit for Two Tats
+  seed=  29 -> evolution_winner=Tit for Two Tats
+
+Per-strategy evolution aggregate metrics:
+  (top final population count / rate / average final population +/- std)
+  Tit for Two Tats     top_count=  6 top_rate=20.00% avg_final_pop=0.1565 +/- 0.1223
+  Pavlov               top_count=  6 top_rate=20.00% avg_final_pop=0.1128 +/- 0.1491
+  Always Cooperate     top_count=  5 top_rate=16.67% avg_final_pop=0.1472 +/- 0.1113
+  Adaptive TFT         top_count=  4 top_rate=13.33% avg_final_pop=0.1496 +/- 0.1429
+  Tit for Tat          top_count=  3 top_rate=10.00% avg_final_pop=0.1268 +/- 0.0975
+  Grudger              top_count=  3 top_rate=10.00% avg_final_pop=0.1089 +/- 0.0998
+  Always Defect        top_count=  2 top_rate=6.67% avg_final_pop=0.1277 +/- 0.0910
+  Random               top_count=  1 top_rate=3.33% avg_final_pop=0.0705 +/- 0.0710
+Evolution average fitness (final generation): -0.7573 +/- 0.1164
+JSON summary saved to: results\tournament_30s_25r_noise0.1_gen100_mut0.05_20260219_015902.json
